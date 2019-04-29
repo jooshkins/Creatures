@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Creatures 👹🛴]]></title><description><![CDATA[A blog about the open source business project - Creatures]]></description><link>https://github.com/jooshkins/creatures</link><generator>RSS for Node</generator><lastBuildDate>Mon, 29 Apr 2019 13:31:36 GMT</lastBuildDate><item><title><![CDATA[🖼️ Front End]]></title><description><![CDATA[This post roughly covers the process of creating the graphic style and developing the logic for the interface of my application…]]></description><link>https://github.com/jooshkins/creatures/frontend/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/frontend/</guid><pubDate>Mon, 29 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This post roughly covers the process of creating the graphic style and developing the logic for the interface of my application.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Creatures 👹🛴]]></title><description><![CDATA[A blog about the open source business project - Creatures]]></description><link>https://github.com/jooshkins/creatures</link><generator>RSS for Node</generator><lastBuildDate>Mon, 29 Apr 2019 14:58:40 GMT</lastBuildDate><item><title><![CDATA[🖼️ Front End]]></title><description><![CDATA[This post roughly covers the process of creating the graphic style and developing the logic for the interface of my application…]]></description><link>https://github.com/jooshkins/creatures/frontend/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/frontend/</guid><pubDate>Mon, 29 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This post roughly covers the process of creating the graphic style and developing the logic for the interface of my application.&lt;/p&gt;
 &lt;h1&gt;😡 Challenges&lt;/h1&gt;
 &lt;p&gt;Tackling the design and logic for my front end is essentially a process of trying to figure out what is the personalty of my app and how will users interact with it. In general, the project followed a path from design to development to testing.&lt;/p&gt;
 &lt;h2&gt;🎨 Design&lt;/h2&gt;
@@ -72,7 +72,7 @@
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-3febb.jpeg&quot;
+    href=&quot;/creatures/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-3febb.jpeg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -91,13 +91,13 @@
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;logo blue&quot;
         title=&quot;&quot;
-        src=&quot;/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-f8fb9.jpeg&quot;
-        srcset=&quot;/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-e8976.jpeg 148w,
-/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-63df2.jpeg 295w,
-/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-f8fb9.jpeg 590w,
-/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-85e3d.jpeg 885w,
-/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-d1924.jpeg 1180w,
-/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-3febb.jpeg 1191w&quot;
+        src=&quot;/creatures/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-f8fb9.jpeg&quot;
+        srcset=&quot;/creatures/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-e8976.jpeg 148w,
+/creatures/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-63df2.jpeg 295w,
+/creatures/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-f8fb9.jpeg 590w,
+/creatures/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-85e3d.jpeg 885w,
+/creatures/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-d1924.jpeg 1180w,
+/creatures/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-3febb.jpeg 1191w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -109,7 +109,7 @@
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/logos-2e9886081c70b2314b00262990541738-ffef0.png&quot;
+    href=&quot;/creatures/static/logos-2e9886081c70b2314b00262990541738-ffef0.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -128,13 +128,13 @@
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;logos&quot;
         title=&quot;&quot;
-        src=&quot;/static/logos-2e9886081c70b2314b00262990541738-fb8a0.png&quot;
-        srcset=&quot;/static/logos-2e9886081c70b2314b00262990541738-1a291.png 148w,
-/static/logos-2e9886081c70b2314b00262990541738-2bc4a.png 295w,
-/static/logos-2e9886081c70b2314b00262990541738-fb8a0.png 590w,
-/static/logos-2e9886081c70b2314b00262990541738-526de.png 885w,
-/static/logos-2e9886081c70b2314b00262990541738-fa2eb.png 1180w,
-/static/logos-2e9886081c70b2314b00262990541738-ffef0.png 1677w&quot;
+        src=&quot;/creatures/static/logos-2e9886081c70b2314b00262990541738-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/logos-2e9886081c70b2314b00262990541738-1a291.png 148w,
+/creatures/static/logos-2e9886081c70b2314b00262990541738-2bc4a.png 295w,
+/creatures/static/logos-2e9886081c70b2314b00262990541738-fb8a0.png 590w,
+/creatures/static/logos-2e9886081c70b2314b00262990541738-526de.png 885w,
+/creatures/static/logos-2e9886081c70b2314b00262990541738-fa2eb.png 1180w,
+/creatures/static/logos-2e9886081c70b2314b00262990541738-ffef0.png 1677w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -150,7 +150,7 @@
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-9f6e6.png&quot;
+    href=&quot;/creatures/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-9f6e6.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -169,13 +169,13 @@
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;ill01&quot;
         title=&quot;&quot;
-        src=&quot;/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-fb8a0.png&quot;
-        srcset=&quot;/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-1a291.png 148w,
-/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-2bc4a.png 295w,
-/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-fb8a0.png 590w,
-/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-526de.png 885w,
-/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-fa2eb.png 1180w,
-/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-9f6e6.png 1200w&quot;
+        src=&quot;/creatures/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-1a291.png 148w,
+/creatures/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-2bc4a.png 295w,
+/creatures/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-fb8a0.png 590w,
+/creatures/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-526de.png 885w,
+/creatures/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-fa2eb.png 1180w,
+/creatures/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-9f6e6.png 1200w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -186,7 +186,7 @@
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ill02-3f095e00110ab824fffc1fafad5b15d2-9f6e6.png&quot;
+    href=&quot;/creatures/static/ill02-3f095e00110ab824fffc1fafad5b15d2-9f6e6.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -205,13 +205,13 @@
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;ill02&quot;
         title=&quot;&quot;
-        src=&quot;/static/ill02-3f095e00110ab824fffc1fafad5b15d2-fb8a0.png&quot;
-        srcset=&quot;/static/ill02-3f095e00110ab824fffc1fafad5b15d2-1a291.png 148w,
-/static/ill02-3f095e00110ab824fffc1fafad5b15d2-2bc4a.png 295w,
-/static/ill02-3f095e00110ab824fffc1fafad5b15d2-fb8a0.png 590w,
-/static/ill02-3f095e00110ab824fffc1fafad5b15d2-526de.png 885w,
-/static/ill02-3f095e00110ab824fffc1fafad5b15d2-fa2eb.png 1180w,
-/static/ill02-3f095e00110ab824fffc1fafad5b15d2-9f6e6.png 1200w&quot;
+        src=&quot;/creatures/static/ill02-3f095e00110ab824fffc1fafad5b15d2-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/ill02-3f095e00110ab824fffc1fafad5b15d2-1a291.png 148w,
+/creatures/static/ill02-3f095e00110ab824fffc1fafad5b15d2-2bc4a.png 295w,
+/creatures/static/ill02-3f095e00110ab824fffc1fafad5b15d2-fb8a0.png 590w,
+/creatures/static/ill02-3f095e00110ab824fffc1fafad5b15d2-526de.png 885w,
+/creatures/static/ill02-3f095e00110ab824fffc1fafad5b15d2-fa2eb.png 1180w,
+/creatures/static/ill02-3f095e00110ab824fffc1fafad5b15d2-9f6e6.png 1200w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -222,7 +222,7 @@
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ill03-f3ba58042602863ff5f101e18d168656-9f6e6.png&quot;
+    href=&quot;/creatures/static/ill03-f3ba58042602863ff5f101e18d168656-9f6e6.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -241,13 +241,13 @@
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;ill03&quot;
         title=&quot;&quot;
-        src=&quot;/static/ill03-f3ba58042602863ff5f101e18d168656-fb8a0.png&quot;
-        srcset=&quot;/static/ill03-f3ba58042602863ff5f101e18d168656-1a291.png 148w,
-/static/ill03-f3ba58042602863ff5f101e18d168656-2bc4a.png 295w,
-/static/ill03-f3ba58042602863ff5f101e18d168656-fb8a0.png 590w,
-/static/ill03-f3ba58042602863ff5f101e18d168656-526de.png 885w,
-/static/ill03-f3ba58042602863ff5f101e18d168656-fa2eb.png 1180w,
-/static/ill03-f3ba58042602863ff5f101e18d168656-9f6e6.png 1200w&quot;
+        src=&quot;/creatures/static/ill03-f3ba58042602863ff5f101e18d168656-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/ill03-f3ba58042602863ff5f101e18d168656-1a291.png 148w,
+/creatures/static/ill03-f3ba58042602863ff5f101e18d168656-2bc4a.png 295w,
+/creatures/static/ill03-f3ba58042602863ff5f101e18d168656-fb8a0.png 590w,
+/creatures/static/ill03-f3ba58042602863ff5f101e18d168656-526de.png 885w,
+/creatures/static/ill03-f3ba58042602863ff5f101e18d168656-fa2eb.png 1180w,
+/creatures/static/ill03-f3ba58042602863ff5f101e18d168656-9f6e6.png 1200w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -258,7 +258,7 @@
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-9f6e6.png&quot;
+    href=&quot;/creatures/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-9f6e6.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -277,13 +277,13 @@
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;ill04&quot;
         title=&quot;&quot;
-        src=&quot;/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-fb8a0.png&quot;
-        srcset=&quot;/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-1a291.png 148w,
-/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-2bc4a.png 295w,
-/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-fb8a0.png 590w,
-/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-526de.png 885w,
-/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-fa2eb.png 1180w,
-/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-9f6e6.png 1200w&quot;
+        src=&quot;/creatures/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-1a291.png 148w,
+/creatures/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-2bc4a.png 295w,
+/creatures/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-fb8a0.png 590w,
+/creatures/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-526de.png 885w,
+/creatures/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-fa2eb.png 1180w,
+/creatures/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-9f6e6.png 1200w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -294,7 +294,7 @@
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-57d5a.jpeg&quot;
+    href=&quot;/creatures/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-57d5a.jpeg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -313,13 +313,13 @@
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;ill05&quot;
         title=&quot;&quot;
-        src=&quot;/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-f8fb9.jpeg&quot;
-        srcset=&quot;/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-e8976.jpeg 148w,
-/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-63df2.jpeg 295w,
-/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-f8fb9.jpeg 590w,
-/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-85e3d.jpeg 885w,
-/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-d1924.jpeg 1180w,
-/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-57d5a.jpeg 1500w&quot;
+        src=&quot;/creatures/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-f8fb9.jpeg&quot;
+        srcset=&quot;/creatures/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-e8976.jpeg 148w,
+/creatures/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-63df2.jpeg 295w,
+/creatures/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-f8fb9.jpeg 590w,
+/creatures/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-85e3d.jpeg 885w,
+/creatures/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-d1924.jpeg 1180w,
+/creatures/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-57d5a.jpeg 1500w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -332,7 +332,7 @@
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-8e918.png&quot;
+    href=&quot;/creatures/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-8e918.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -351,11 +351,11 @@
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;blue site creatue&quot;
         title=&quot;&quot;
-        src=&quot;/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-fb8a0.png&quot;
-        srcset=&quot;/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-1a291.png 148w,
-/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-2bc4a.png 295w,
-/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-fb8a0.png 590w,
-/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-8e918.png 640w&quot;
+        src=&quot;/creatures/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-1a291.png 148w,
+/creatures/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-2bc4a.png 295w,
+/creatures/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-fb8a0.png 590w,
+/creatures/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-8e918.png 640w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -366,7 +366,7 @@
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-89d84.png&quot;
+    href=&quot;/creatures/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-89d84.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -385,11 +385,11 @@
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;site creature1&quot;
         title=&quot;&quot;
-        src=&quot;/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-fb8a0.png&quot;
-        srcset=&quot;/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-1a291.png 148w,
-/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-2bc4a.png 295w,
-/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-fb8a0.png 590w,
-/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-89d84.png 769w&quot;
+        src=&quot;/creatures/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-1a291.png 148w,
+/creatures/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-2bc4a.png 295w,
+/creatures/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-fb8a0.png 590w,
+/creatures/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-89d84.png 769w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -400,7 +400,7 @@
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-9d65b.png&quot;
+    href=&quot;/creatures/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-9d65b.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -419,11 +419,11 @@
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;site creature2&quot;
         title=&quot;&quot;
-        src=&quot;/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-fb8a0.png&quot;
-        srcset=&quot;/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-1a291.png 148w,
-/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-2bc4a.png 295w,
-/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-fb8a0.png 590w,
-/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-9d65b.png 612w&quot;
+        src=&quot;/creatures/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-1a291.png 148w,
+/creatures/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-2bc4a.png 295w,
+/creatures/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-fb8a0.png 590w,
+/creatures/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-9d65b.png 612w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -469,7 +469,7 @@ they have a bunch of free fonts to use and you can simply link to their &lt;a hr
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/rough-creature-a852d236cc00d3e667c2559338116007-4e82e.png&quot;
+    href=&quot;/creatures/static/rough-creature-a852d236cc00d3e667c2559338116007-4e82e.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -488,11 +488,11 @@ they have a bunch of free fonts to use and you can simply link to their &lt;a hr
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;rough creature&quot;
         title=&quot;&quot;
-        src=&quot;/static/rough-creature-a852d236cc00d3e667c2559338116007-fb8a0.png&quot;
-        srcset=&quot;/static/rough-creature-a852d236cc00d3e667c2559338116007-1a291.png 148w,
-/static/rough-creature-a852d236cc00d3e667c2559338116007-2bc4a.png 295w,
-/static/rough-creature-a852d236cc00d3e667c2559338116007-fb8a0.png 590w,
-/static/rough-creature-a852d236cc00d3e667c2559338116007-4e82e.png 804w&quot;
+        src=&quot;/creatures/static/rough-creature-a852d236cc00d3e667c2559338116007-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/rough-creature-a852d236cc00d3e667c2559338116007-1a291.png 148w,
+/creatures/static/rough-creature-a852d236cc00d3e667c2559338116007-2bc4a.png 295w,
+/creatures/static/rough-creature-a852d236cc00d3e667c2559338116007-fb8a0.png 590w,
+/creatures/static/rough-creature-a852d236cc00d3e667c2559338116007-4e82e.png 804w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -503,7 +503,7 @@ they have a bunch of free fonts to use and you can simply link to their &lt;a hr
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/final-creature-d577af239e27b29f3b8be01aeda38018-a0e60.jpeg&quot;
+    href=&quot;/creatures/static/final-creature-d577af239e27b29f3b8be01aeda38018-a0e60.jpeg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -522,11 +522,11 @@ they have a bunch of free fonts to use and you can simply link to their &lt;a hr
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;final creature&quot;
         title=&quot;&quot;
-        src=&quot;/static/final-creature-d577af239e27b29f3b8be01aeda38018-f8fb9.jpeg&quot;
-        srcset=&quot;/static/final-creature-d577af239e27b29f3b8be01aeda38018-e8976.jpeg 148w,
-/static/final-creature-d577af239e27b29f3b8be01aeda38018-63df2.jpeg 295w,
-/static/final-creature-d577af239e27b29f3b8be01aeda38018-f8fb9.jpeg 590w,
-/static/final-creature-d577af239e27b29f3b8be01aeda38018-a0e60.jpeg 800w&quot;
+        src=&quot;/creatures/static/final-creature-d577af239e27b29f3b8be01aeda38018-f8fb9.jpeg&quot;
+        srcset=&quot;/creatures/static/final-creature-d577af239e27b29f3b8be01aeda38018-e8976.jpeg 148w,
+/creatures/static/final-creature-d577af239e27b29f3b8be01aeda38018-63df2.jpeg 295w,
+/creatures/static/final-creature-d577af239e27b29f3b8be01aeda38018-f8fb9.jpeg 590w,
+/creatures/static/final-creature-d577af239e27b29f3b8be01aeda38018-a0e60.jpeg 800w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -596,7 +596,7 @@ The mock up allowed me to focus on figuring out the logic and navigation of my a
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-11bd2.png&quot;
+    href=&quot;/creatures/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-11bd2.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -615,14 +615,14 @@ The mock up allowed me to focus on figuring out the logic and navigation of my a
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;mockup&quot;
         title=&quot;&quot;
-        src=&quot;/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-fb8a0.png&quot;
-        srcset=&quot;/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-1a291.png 148w,
-/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-2bc4a.png 295w,
-/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-fb8a0.png 590w,
-/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-526de.png 885w,
-/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-fa2eb.png 1180w,
-/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-08f6a.png 1770w,
-/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-11bd2.png 1943w&quot;
+        src=&quot;/creatures/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-1a291.png 148w,
+/creatures/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-2bc4a.png 295w,
+/creatures/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-fb8a0.png 590w,
+/creatures/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-526de.png 885w,
+/creatures/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-fa2eb.png 1180w,
+/creatures/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-08f6a.png 1770w,
+/creatures/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-11bd2.png 1943w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -699,7 +699,7 @@ The mock up allowed me to focus on figuring out the logic and navigation of my a
 &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/dynamodb/&quot;&gt;DynamoDB&lt;/a&gt; - simple database for keeping track of scooters&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/api-gateway/&quot;&gt;API Gateway&lt;/a&gt; - API to receive communication from clients and scooters&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Additionally my back end will communicate with a Cloud IoT service, &lt;a href=&quot;https://www.particle.io/&quot;&gt;Particle&lt;/a&gt;. My scooters will use Particle hardware. I cover Particle in greater depth in the &lt;a href=&quot;/hardware&quot;&gt;🔧 Hardware Guide&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Additionally my back end will communicate with a Cloud IoT service, &lt;a href=&quot;https://www.particle.io/&quot;&gt;Particle&lt;/a&gt;. My scooters will use Particle hardware. I cover Particle in greater depth in the &lt;a href=&quot;/creatures/hardware&quot;&gt;🔧 Hardware Guide&lt;/a&gt;. &lt;/p&gt;
 &lt;h1&gt;😡 Challenges&lt;/h1&gt;
 &lt;p&gt;When designing the back end for my scooter share, it was helpful for me to start by writing out the features I wanted to provide for my users. Writing out a features list, should help concentrate my development efforts. The feature list I came up with was focused on &lt;strong&gt;must-have&lt;/strong&gt; features. Since I considered this project a proof of concept I wanted to focus my efforts on creating a minimum viable product.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Here is the list of must-have features&lt;/strong&gt; &lt;/p&gt;
