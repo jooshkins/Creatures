@@ -1,4 +1,827 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Creatures 👹🛴]]></title><description><![CDATA[A blog about the open source business project - Creatures]]></description><link>https://github.com/jooshkins/creatures</link><generator>RSS for Node</generator><lastBuildDate>Thu, 13 Dec 2018 03:24:15 GMT</lastBuildDate><item><title><![CDATA[Idea / Project Goals]]></title><description><![CDATA[Bird, Limes, bah! How hard can it be to create a scooter share? 😁 Walking to work I see plenty of electric scooters on the side walk, and I…]]></description><link>https://github.com/jooshkins/creatures/project-goals/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/project-goals/</guid><pubDate>Tue, 11 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Bird, Limes, bah! How hard can it be to create a scooter share? 😁&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Creatures 👹🛴]]></title><description><![CDATA[A blog about the open source business project - Creatures]]></description><link>https://github.com/jooshkins/creatures</link><generator>RSS for Node</generator><lastBuildDate>Mon, 29 Apr 2019 13:31:36 GMT</lastBuildDate><item><title><![CDATA[🖼️ Front End]]></title><description><![CDATA[This post roughly covers the process of creating the graphic style and developing the logic for the interface of my application…]]></description><link>https://github.com/jooshkins/creatures/frontend/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/frontend/</guid><pubDate>Mon, 29 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This post roughly covers the process of creating the graphic style and developing the logic for the interface of my application.&lt;/p&gt;
+&lt;h1&gt;😡 Challenges&lt;/h1&gt;
+&lt;p&gt;Tackling the design and logic for my front end is essentially a process of trying to figure out what is the personalty of my app and how will users interact with it. In general, the project followed a path from design to development to testing.&lt;/p&gt;
+&lt;h2&gt;🎨 Design&lt;/h2&gt;
+&lt;p&gt;The following are some of the questions and tasks I wrote out to help me to figure out the project.&lt;/p&gt;
+&lt;h4&gt;Branding&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Are there terms your users need to learn?&lt;/li&gt;
+&lt;li&gt;Does your app have some internal lingo?&lt;/li&gt;
+&lt;li&gt;What is your catch phrase or slogan? do you need one?&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What is your app’s personality? &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Serious, Slick, Fun, Quirky, Stupid etc..?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Graphic Design&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;What are your app’s colors?&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Is there a design principle behind your color choices?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Monochromatic, Complementary, Analogous, etc. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Is there a theme to your app?&lt;/li&gt;
+&lt;li&gt;How does your theme relate to scooters?&lt;/li&gt;
+&lt;li&gt;What is your logo and how does it relate to your theme, color, branding? &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;👩‍💻 Development&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Do I want to create a web app? or create a mobile app? &lt;/li&gt;
+&lt;li&gt;Fill website with content / answer our user’s questions.&lt;/li&gt;
+&lt;li&gt;Handle user login - Authorization flow&lt;/li&gt;
+&lt;li&gt;Accept Payments - Payment flow&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Decide on Approach&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Will I use any existing front end frameworks / libraries to help with the logic of my app?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;React, Angular, Vue, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What existing resources will I use to help with the design of my app? &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bootstrap, Blueprint, etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;📋 Practical Matters&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Registering for a domain &lt;/li&gt;
+&lt;li&gt;Deploying to the web&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;💣 Testing&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Poke your website, see where it breaks&lt;/li&gt;
+&lt;li&gt;Is your website responsive?&lt;/li&gt;
+&lt;li&gt;Does it work on most browsers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;🤔 Solutions&lt;/h1&gt;
+&lt;h2&gt;🎨 Design&lt;/h2&gt;
+&lt;p&gt;Before starting work on the design, I had a rough idea in my head on how I wanted to approach the design. I knew that I wanted the design to be fun, and fun to make. I did not want the design to seem corporate, slick, or minimal. I wanted the design to be arty, illustrative and kind of weird. Keeping with weird, the idea that I came up with is that each scooter would be a unique “creature” and that users would discover them out in the wild. (sort of like Pokemon meets Bird scooter app). Each scooter would be paired with a creature illustration and brief background story. &lt;/p&gt;
+&lt;h2&gt;Logo&lt;/h2&gt;
+&lt;p&gt;The first task I set out for my self was designing the logo. Starting with the logo helps, to set the mood for the rest of my design assets and to define some of the core colors.  &lt;/p&gt;
+&lt;h2&gt;First step, blue pencil thumbnails:&lt;/h2&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-3febb.jpeg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 83.1234256926952%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAARABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHvxE0FsCg//8QAFRABAQAAAAAAAAAAAAAAAAAAIEH/2gAIAQEAAQUCFH//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAUEAEAAAAAAAAAAAAAAAAAAAAw/9oACAEBAAY/Ah//xAAaEAACAgMAAAAAAAAAAAAAAAAQQQABESEx/9oACAEBAAE/IXGLWpngsf/aAAwDAQACAAMAAAAQP8AA/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPxAf/8QAFREBAQAAAAAAAAAAAAAAAAAAASD/2gAIAQIBAT8QI//EABwQAAICAgMAAAAAAAAAAAAAAAExEBEAIZGhwf/aAAgBAQABPxC0wlF7B0WWeM21dSGj/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;logo blue&quot;
+        title=&quot;&quot;
+        src=&quot;/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-f8fb9.jpeg&quot;
+        srcset=&quot;/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-e8976.jpeg 148w,
+/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-63df2.jpeg 295w,
+/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-f8fb9.jpeg 590w,
+/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-85e3d.jpeg 885w,
+/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-d1924.jpeg 1180w,
+/static/logo-blue-d1417b87afc657bfd4dc2bc4f769f8bb-3febb.jpeg 1191w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2&gt;Next step slowly refine the design in Adobe Illustrator&lt;/h2&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/logos-2e9886081c70b2314b00262990541738-ffef0.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 128.80143112701253%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAACXBIWXMAAAsSAAALEgHS3X78AAAFD0lEQVRIx4WVa0yTVxiAz/d9/VqubWmrhVILveGAglJaLVBoRARLuTmBcakXLgMG5SrXIcyA0S2M6AiC2bxMcYtxGDJlk23J3J/FH9P98MeSxblkybL5Y/uxZH9msp29L5y6KuhO8uSc73znvOd9z3s5hBCyCYgka00HSMn6xjGetG6fkyPPaWogEdACqWwuHsjkOC4d+jxAydbhvEYqEQyoyNcn/brJxuwiGO8G9s61F1Xh5jjADBgYYSDIBv0+IAcoBLYAKuAlXCPwnBUFTvTYY9zGxJ+azKU01Zb85kRVhpewxS7gBGoCwtDsbI1Gswc4jQcKgmBm67YCx9GSXw68K0Cfe1hXSGcKAtQ2evkBqf8qljCtHEAb02IzCpRIJBWiKA7DOAGwMHPxStpRcI7KFga9vUydRU9ld1LH6IWV2IpjehQYzTZpmXCeCcV7sQNuIAoQ2V3jvwSRF6KZt8ZyNOl/xCsjjsKnPOgYkWknYd8RYHoc4IQx3lc4m8fDFIDsGceuHkIp3TA8sO0ErgNzwGvo2WcXKsW1SDMIsTx5QQsKnIf7G5HL5X70LM/zseTF7b+YNBgSiNFoWh0PDAwREILeu6ZUKouBeTQFvKwPuY7/b2h7TW196IYGYAUTgpmvCP6Ynp5+sg6s2CBN1OonngGNYvR6Pe/1+kSZTObD+1MolbmbtbG8xWKRhjgHZInyDbVLTk4pfKWm7vaR/qEplytrATPFbLE6ExONyzB+3Wg0n8nPL8BwCi/2epfv3r037/f7L8P3alZAJAhPCewIdJ3u6emjdfX+h+7cvN0shMZbWtto/8Dgr3a7HTUNX1z8KP/GzWU6PDJKd+3KD2AhSUtPX+/h9o7OHysrqx77fCW0u6dvDKtNvF7/7ezcPG1qfpVe+eDDKVy3tLT0zvkL79PcPA9NS0u/B45SgHZR6wQGAl1ne/v6aW2d/6EnLy8fNRQE/gRqODg0/LPP592LgXz9+qL31soKHRoeoS6XqwNzPEFvFd64VMDJVTIu3iznGkYdGD45kkDv4MnOrp6Laos9OSQjxqOjo65Avy14+CdLt6o//ezzj2dm5suD0bGuze5PMPrW6p38aKHevQvu+UTPtk2PzolY1sLfClizaj0RCmLaLeF8BANWUr7PlFbamoqljBwcdmzHTDJtlZlLm1KdpMREui1m62MSpr9RYBYx1YjbSvZsT9vylxBp+MJjE88f8uqMOH+0LPn+gNvzQ7dTf9XpNRzAuRSH6mbMZtsjIVx+NatId4QIcu19d+MCHa/e//2Ih+SuVmeJ7GJO3SQd66r+7UxrBJqnOJdEyhsKD1FL/QRtHsiEOinFYpKt1Lj/zNm3QCuPFC3GxxEjURsz/s5rvvZ41JtGv+xMWq2J0Zq4O8UdZ2lvrZ1+817KJFafWSs3WFZzjEbkN9C2Ccd3vpZaFFhnSm2m2wve/ufAkPP3w8MuzCoylZTbSIt2+m6DJ7Ij1W4snIcSMwpoRUnxAy1P4M2I0czoiW7UteNRVWUHbfKYBvHZAJdGiVLVnaQdvTRxp+MUzCUFfYOPywA41xziLw/QH+rlSyYSN2eN7Du4Sf5yyDpMQQz0ZkEqVWyUjZmALVqlUyZbdJGKCA7zVxvGE3i4uIRg2gtrFV4nC9OGbSQkmI94Qjar0hjQLUA5o0zgSKmU5yqhx3RsZJY52d7nljcVeztEdkAUK/GRbBzLNscwc59Kv38B5FUm0lDiGRoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;logos&quot;
+        title=&quot;&quot;
+        src=&quot;/static/logos-2e9886081c70b2314b00262990541738-fb8a0.png&quot;
+        srcset=&quot;/static/logos-2e9886081c70b2314b00262990541738-1a291.png 148w,
+/static/logos-2e9886081c70b2314b00262990541738-2bc4a.png 295w,
+/static/logos-2e9886081c70b2314b00262990541738-fb8a0.png 590w,
+/static/logos-2e9886081c70b2314b00262990541738-526de.png 885w,
+/static/logos-2e9886081c70b2314b00262990541738-fa2eb.png 1180w,
+/static/logos-2e9886081c70b2314b00262990541738-ffef0.png 1677w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2&gt;Sketch the layout and hero image&lt;/h2&gt;
+&lt;p&gt;The next task is to figure out the layout for the website and create a hero image. I wanted my site to open up with a large hero illustration, setting the tone for my site. Additionally the illustration gave me an excuse to do some painting 🖌️&lt;/p&gt;
+&lt;p&gt;The layout for the home page will contain: info explaining the app, an FAQ, and a big shiny button to sign up. The rest of the application’s interface will be links to policy documents and a system to handle scooter management. &lt;/p&gt;
+&lt;h2&gt;Paint the hero image&lt;/h2&gt;
+&lt;p&gt;The software, I used to make my illustration is: &lt;a href=&quot;https://sketchbook.com/&quot;&gt;Autodesk Sketchbook&lt;/a&gt;, and &lt;a href=&quot;https://krita.org/en/&quot;&gt;Krita&lt;/a&gt; both are free and excellent.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-9f6e6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAACiUlEQVQ4y01Ty44TMRCc//8GuIDEjQMSSEhIiAsXFpZlH9mQ9yaZbDKTeb/tcRfVDkhY6oxit6urqtuBc05MP0DX6xev8O7NS6y/fsHD+7f4/fkjpp8+ID4c0DWNz7HWQsYRjqFLREAI9HWN8/4gAQ9kHAaM1sppt5PseJImz6XJMqniWNo8k910JvP7B0miWOaPUxmNEV1OLktJCcGbopRg6HsxXYe6riXcbhE9HxE+bXGOYmRJgjzPMfn2HdObX3hkLGcz9Mx3ZDoOxjNUos6OaPNCAl+Bh1l8ljQ+g9WRpynGtkO52KCjlOcwRNe2OB2eUbAASaBMUlRphoK5ZVFIT0uqJKVkSq2KAgtKyXio3kThAef5Cvl0gWS7x361Rk/A+HhESUBLiwb+t85BgZqylJLgeZJIYLuePhXYLpeiFyqCTq5+YHl1jdPtBOuft1jdPXiQ5BShqSrqc55hfk5QxLGqEksbuqqWgH5IRcDNYiG75QopEyJ2NdmFqOMEure4nyDah9jM5t5X9a0i07aqUVOdNtTSKmUaDETVLgs3ecARcD5M13tWKVnN7u7R0EsdnZ7ejrTFEMBqDpm1WS6GDSJ7Su4HGcoKPTs0FCV6xlA3l1CfeHFkB5WVSvX7TQtnWJwFNUzbSk0P4/XmMod/B1RpS1830rFim2ZCcDGqgD5r89gAIWs/d5pLpv5rOHrH7Q6/r2/IUA1V+hoch/+Xdlz3OrJu2AQWAgvAtheG0Fei8sl4JPuWTAM/5ZdxVw99+D19T7yiYZVJ24kbjPot6rta5G0qK6/I0TrNDfijD9n8C0IbvlfDUTCUasjcsAB1WcPXwLCq1X8dz7o0M/nT3rRRbAg+/AEh3uQCQ+JyTQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;ill01&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-fb8a0.png&quot;
+        srcset=&quot;/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-1a291.png 148w,
+/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-2bc4a.png 295w,
+/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-fb8a0.png 590w,
+/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-526de.png 885w,
+/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-fa2eb.png 1180w,
+/static/ill01-2fd0fc93d38f4b753e93a66c9aabc2c9-9f6e6.png 1200w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ill02-3f095e00110ab824fffc1fafad5b15d2-9f6e6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAABgElEQVQ4y3VTCXLCMBCz4yPkACcFQilXyv8fWSkjBw9DPaP42tVqdx1jXsMCznwYIYTeex+5bppmsen7frlzzmUbTztTVdVygNkBW2ttByOPdeBaxgfgXtd1AvGs4Mto23YNvATFJ28CiA4gGjDvgYT1iPMeZI8Y44z5ifOby7LgVpCZnIWZpokqOjpLbQN1lL7hHmQjYMGzo2BxcD1rNrB/ESKVCMILHFoRbmV4ZLlwd4RNgMNIc5FegBNwzbVcCUHQwemEKFnBE7gDZ+AGwzObgXkQIX32mB7wubOOZcoOh1sYTFLF+lDJL0CCbwT7QcpsFm36lBLLUHsyxNjg3q5NEQlTjUWRSZoohGWgehjbIl3WjPuoWrMHNhMOqhXxVQSgs4eDk7NVkyqh1t6qcexDl1ufDboiwEGps0GN7qPUV/ILeQ+yEbia8pHqMv8xOUCS8v1bBrEQw6fpgfj+l/kPf57VeQ6wU5Ak9YMyCf/4r2OTn8iHAK0Ie5XjqPXuDwWIDVXaHzFBAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;ill02&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ill02-3f095e00110ab824fffc1fafad5b15d2-fb8a0.png&quot;
+        srcset=&quot;/static/ill02-3f095e00110ab824fffc1fafad5b15d2-1a291.png 148w,
+/static/ill02-3f095e00110ab824fffc1fafad5b15d2-2bc4a.png 295w,
+/static/ill02-3f095e00110ab824fffc1fafad5b15d2-fb8a0.png 590w,
+/static/ill02-3f095e00110ab824fffc1fafad5b15d2-526de.png 885w,
+/static/ill02-3f095e00110ab824fffc1fafad5b15d2-fa2eb.png 1180w,
+/static/ill02-3f095e00110ab824fffc1fafad5b15d2-9f6e6.png 1200w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ill03-f3ba58042602863ff5f101e18d168656-9f6e6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAADpUlEQVQ4yy2S+08cVRzF9z+wqa9oNEajiaaJNjFqTKmINEWUtMHUWp+1SLVtrGmr3Z2d2dmdndl5bkuhsJTlUaCQQOo2lBaWShCKpboIhUjKLi7lIZayNSDYqpShfo8X9IeTT+794Zzv+d7ruBszaTlmAoNB1OtfoPloHiZq9mE4lI/Rqr0YKf8Mv3f5sdRrAANBLK+w3wL1m6A+c5UrZ5vd3+pRybF40aI73Rb+7jZpplWi39r8dLtTpT86FJr9RqK/OhVKtUs0GRVpvkuh8fM8/dNrEvqsVdH/XDG9E9PJMR+16NYFC7OtOk01+TF9TsH1Zhmp1gButMiYa9eQjAhInhEwEuEx1iRg8TsD9mUTi5d0LP9g4m7MItYUi5eZYepri25GLPzSqNJkYwBzzUFMRzTMNptINWmYb7UwFZGx0GZi+qyCuaiOPzsszJxXMNLI42ZUwVJ3kBYvmrjdyQx/rbNorEbHQKmXrtWouNEQxGhNgEnBcJWEsboAEtUSpk/ruFYv4/ppDTNndMRrRSTrfYjXebDAWi5ETcy2MMOJkxYlylQMFEt09YSC0Uod3xfwiBUK6C8W8eNxDwZDXkyeMpCoVDBeq2G6wUKiyo8rJwQMhj1YaZliLVkoORJhg4ZCAfQXSYzMsMLATyUyeoI8hkIyrhT50FfoRSKsYrBYQrwsgIlqC0kWPFZtIFmlYbLWpKk6i4UxwzbDT98eUdBTqFLsuMaqGxgI6WxCGcNlBoZKVfQe8yFZYSJRxh6o3ABrhbFKEz+XszUwjrOW4ydNNgwzNA6JFDwkoMjpobBbRI3XhwbZjyZNQYupoj2ooatAR0+RjkvHAugrYfsOsdASDYMlKuJhk4VZFA/ruFrK/uG7H4m0c5cXn+SJtCffQ5/v5unApxy59vLk3S+QdlCkAqdEJW4/VYgynZIC1KCoFFEDdFYPUNRSqeOoRhdMP1o1DznWZQu0PseDF7Z48PJWAelveZC5zYPX3xaQ844buTs4bH+Pwwcfcsj7mMO+fAEH94hw7/dBOiBB+0rGEaeMIk5GKS+TY+1GN937ipvuT3fTg+kcPZzhpkczeXp8E09Pbubp6Sye1mW76bk3OHr+TRe9lOOitK0uysh1UdY2jnK2c5S7w0Xv7xRpV56XHPekcUtM9n9yr3IN45oNh+21aU77vnTefuBV3n4og7cfeY23H8vk7ScynfZTmw7bz2x22s9mc/b6rC/tF3Nc9oYtzqV/Aa3Xyx22Y04aAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;ill03&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ill03-f3ba58042602863ff5f101e18d168656-fb8a0.png&quot;
+        srcset=&quot;/static/ill03-f3ba58042602863ff5f101e18d168656-1a291.png 148w,
+/static/ill03-f3ba58042602863ff5f101e18d168656-2bc4a.png 295w,
+/static/ill03-f3ba58042602863ff5f101e18d168656-fb8a0.png 590w,
+/static/ill03-f3ba58042602863ff5f101e18d168656-526de.png 885w,
+/static/ill03-f3ba58042602863ff5f101e18d168656-fa2eb.png 1180w,
+/static/ill03-f3ba58042602863ff5f101e18d168656-9f6e6.png 1200w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-9f6e6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAADwUlEQVQ4y0WRbUyTBxSF3wjMxalQ3TTgoBaGBnQZzjgm6IaFKRGMfFihtoWW0pZCu0KhQCmlyNpC+aYwAwJCmaKLMDaXIcOIThccSKcxik6MjH0km8tYssxM3mX37HWL2Y8n9+b8eXJymKVJFz256gBme3Gqsw3nTjZj/sJp3B7uwf3RAdz9pA+Lt4axdL0R8Nbjr6laYKYedN31P0/zCRsGrRJi5keq6c4ZC+aGqmjh8jF6NNtLf86N0pP7H9PjhRHCwzF6dNFF8yPltHipkmaH9tLfU07CTAPByzFT/x9fN+DDVg0xHlsedVnUOGlRkteagYedOnxuSEanOBYnlAk4q0vCVeN+zLlkmG6W42J7Gh58VIGfx+z4adyGx1/U4vfLTvptwo4+h5KYqlwJqQ6nwSI5SDcdKvwx7sagNB66V4NhiHoZ2sggnJcLwZ6vxWeVcriNuei3adF1NANWczRON0lwY8BC3oFy2A1iYu71OGmssRgW5W6asefj1+FWHE/ZBfOBaLRVZ6I1LRoTmmQsnnWiQyVCTmoyimUiFOXvQmnJ6zDqdqLXqqZurqVemkrML6faaLrVBKfhbbpUosBNeyGOi+JQnZOMBrMGFypEmCo+goV+J67Y8nHOVoTROhOOlXCt8mNQq09Cd1keuXTZ0IhSiPm0powGDCp06I7QZE0R7rVX45bbihGnFlMtZZisKcCXBRm47TLB6yzCbIsZ33/QyG1Qiq+cBm4XExY8LrrWZkVjgYIYa5aMnGoV2vR6chfq0W8uxhlrCQarCjHttuOGuwbXONF8dx2+6XwPdzsqMd/XhB8HmvBtTx0ecPkPnkbyth9Fl1FLzP7oHZQpjEN2YiLp0g/BKJbBJJWjUqFGZY4adk0eN0QhPBUmDFWX40qLnRM58L5Bi25jPu501uE7TzONO0rR9W4uMesDwygoKBSbwzZTVMRWitm2nfbFvkWpwkTKOnCIctNlpDmsoLxMJWk59BIlmbLVpBfLyShV0AlzGY3VO8hjKkC7VkrM8gA+PR/Ax1NWrBEg4CUB1q4PxYaQTQgNi0RkxDZEb9+NuJi9SE5IR3qSFBkHFZCJNJCm50KcIocsTQFNhhKlCq6yz2o++XL4+W/kEPz7P+M5fz5xElr5ooB4geG0LjiCNoS9RuFbYmhrVDy9GZtKexKktOedLIrfpyAhd5llq0OWlq0KYZ/BCVgf7vrxwllf3iusz0ouW8VnfTn8/Pnscp6AfWFdOBsYsYPlBW9hV6wJZTdGCtk3ElTszgTl0j88+GXWXcqhvwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;ill04&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-fb8a0.png&quot;
+        srcset=&quot;/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-1a291.png 148w,
+/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-2bc4a.png 295w,
+/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-fb8a0.png 590w,
+/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-526de.png 885w,
+/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-fa2eb.png 1180w,
+/static/ill04-d4d4f2af932fe4e0a19ca5549d6f8047-9f6e6.png 1200w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-57d5a.jpeg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMFAf/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABdkV+bTJwf//EABgQAAMBAQAAAAAAAAAAAAAAAAABAgMR/9oACAEBAAEFAr2pOdny6VCukLe0PZ0f/8QAFhEBAQEAAAAAAAAAAAAAAAAAABES/9oACAEDAQE/AdK//8QAFREBAQAAAAAAAAAAAAAAAAAAABL/2gAIAQIBAT8BhL//xAAaEAACAgMAAAAAAAAAAAAAAAAAAQIQIjFh/9oACAEBAAY/AsBuQnw3f//EABkQAQEBAQEBAAAAAAAAAAAAAAERADFBof/aAAgBAQABPyFrFkMc2vYZMTucRb2MlX47/9oADAMBAAIAAwAAABDH/wD/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQMBAT8QBuyW/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERIf/aAAgBAgEBPxB4gpP/xAAaEAEBAQEBAQEAAAAAAAAAAAABEQAhMVGB/9oACAEBAAE/EGgehRSdV4mPQdnZb5creEtpvAX7iJ2fHEDRk8N//9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;ill05&quot;
+        title=&quot;&quot;
+        src=&quot;/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-f8fb9.jpeg&quot;
+        srcset=&quot;/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-e8976.jpeg 148w,
+/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-63df2.jpeg 295w,
+/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-f8fb9.jpeg 590w,
+/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-85e3d.jpeg 885w,
+/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-d1924.jpeg 1180w,
+/static/ill05-84312f4a7d8748d4e4469baf2a957d0a-57d5a.jpeg 1500w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2&gt;Other site assets&lt;/h2&gt;
+&lt;p&gt;After finishing the illustration, I spent some time creating a few little guys to populate my site. &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-8e918.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 156.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAfCAYAAADnTu3OAAAACXBIWXMAAAsSAAALEgHS3X78AAACd0lEQVRIx4VWi3LjIAzs/3/e/UCnc3N9XZo0iRMc20hlLdYW2Nx5hhIEXlZaSfWTqoriz/xX9TGqjpOtMfpB9dbbHs/4x5vSvjw5QMySACUMKlNUScASHip9XvMMZozo1htAzDGqDpOxAkuMYTTWg2ON3+lSvT9UoxREDTCvhACJ1QzajzZjDTsenFn207iG+VyDoazsJsf21NmBewbqegMic4SmFcPZBQqDwxAEv8luyAxxCS5Y9BDncmU0dnR3KBVGnGG/3O2cJ7PLkA/ZuZdWUCmZu3e3DGNWMUoJ5HMQe7hIpAFIO4AQ7Op2n7izyzsJ3nYZYN83E8YzwgWwQQheFlf2FUNZGR6uqh/npOJtZQX3APTIQjHJmfyoLOwtDAnY5+wPOdc8IJN5cFWzeBANEOVZAML492Juf13LuDGJAU5BnFhlDMVVyp+j6q8Xy7NWh9kRa5vYLjn181y+SEbRJT7XOU/bKiPIYHns1kqB+1CeVYPUwvr92xoI3h2mfzBkQ0DcQi6zzuUmhMMlryeLa9qXY5cBfQ5F16X5AAgiHbs1N+Hm7680Drm1TVUMfdrQTRyEvQvGEOqzu8AOG4UrYugVwgtkAma+nusG4UUrKoULJCXUfTuZykXp5TzMybsB3wXEDKDnT1N5dNUAtuebAbOm2Wz3u42LoVeTD9khXc53i3HFdsuQgcVLZDa6vjh3nLgCxf+5TKb+Hz5CUAtzuFj+VXFsd2weRCWculIcuIpLkC6V8k3A5esgASL75y8G7qEiOLy9xbDgzq8Iz+QSrOQQ50YnWgCL29ytxRrfOKkMN3Y/AIgCCpzTocCZw9s5KvuC8QPNP5ZQS+fiRwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;blue site creatue&quot;
+        title=&quot;&quot;
+        src=&quot;/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-fb8a0.png&quot;
+        srcset=&quot;/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-1a291.png 148w,
+/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-2bc4a.png 295w,
+/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-fb8a0.png 590w,
+/static/blue-site-creatue-380c1881c84531de7f25c51b1aec20b0-8e918.png 640w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-89d84.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 130.03901170351105%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAIAAAA44esqAAAACXBIWXMAAAsSAAALEgHS3X78AAADtElEQVQ4y5WU709TZxTH+Rf20v9hL7Ysjhe+wWF0WxY0M0RtFqeIJo1oJTJkgqyoZcCAdkB7e3/0F3WmMOiKtFhQVGoLtk9v29te2kJXBv7A0NoKToGW9j57LmGWgIwueXJfnJzPc873+5x7CqAbz+sA5fZgQR6kkgP4iv92yqvdcsUucMZDpT3qpfBA3Hs7S5P/o/Iycyvp//35PLg//FtH5Yn821a+CfQ+D1unYuFBxm5tqeoQHHvr6IQeYjcYKNNezfzUXTYWtszMDBnK3/WK274SRO/chIyK2yS7YDu5RqtiocHIU6ctHvtjqGHVI3zTI+8sEjhU1TCozbp2hjk3EQub2ae0cylheKRfGD8H/cQ7k5w6dGqwuQJOdWec2A4wUC6y/ZNzgH4b73E99N8tg355FhCZMWzolEh/+QwMqneoDLAVRj8THfMlZ+/8OT1kOAGZpixQQQ+eGce8NfVU2feoCwg+ZBjnxl9OWdkXvseJOK6qSNrL7eraZUenjapKjysijZLWL0vTQAHdxDYYYOhVQ389AStLaosuNHAU+pVjRFXigZQx1KOEBaqto1gwa27cbHiucnzSxLye6w+yZk0ZZGVZQEIvCX0U+nLo2fs68YMn7cpqGMoZvgFn3cSLyD1bckGnvbY88ROkKRRccXQ9szRxKNVL/G3s0O4/Y7hyFoY1OZhbn6cUrZpOTOMmQ8hUAyeJDA+QyYfSOcvPkCagF39laB8+Uik9dhyy5HvP1mGXfDVstLBOk+468mP5gTxtV6w+lq/ZsNSIItEvTfTJom2NzrK6lv2lSzYZ9JAceA8DLOXX95BtwV9bIjck9KV6plocqrsORHWO8h+dZ2tHjlzuLzpv3Hfh2p6SceIKnNyQXcBb56Ne3vvlh6NfS4q+Fe893FB4uPaTb47vKRR9duDC58UHP/r49Kf7LhZ9can4gGBvobFZmIM3DHMpFx9JE7b2Rbss5ZFH+yTi0pJsAIMRtUIkGJFVwjl9xofDAMl5NmnOTRh6GCQG/fGM6vWozHhTyCtitf5esUVaAUP8VCOp3IcnDGwcZO/qhNzadTH9RIE6pG9dNcsqYLg748J2WQY87CVfjbabWoV8hNX4DfXDchEM6fKBlTCgnr3fNtwlggENZKjogGRCV4NuWXNieawhmuhtOjeh5QHUxby1BXRfRRdxPuq/4Ox62cHW83j1d9n16ecb8ZBIc8PJElOTEDWyZQ0RW04auRrUQn7R/hv0UYlR6TNzMz+qmzL/AR+pim1TqaK6AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;site creature1&quot;
+        title=&quot;&quot;
+        src=&quot;/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-fb8a0.png&quot;
+        srcset=&quot;/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-1a291.png 148w,
+/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-2bc4a.png 295w,
+/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-fb8a0.png 590w,
+/static/site-creature1-5f692fab0a7cb94da8a43ebe9411ff9a-89d84.png 769w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-9d65b.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 163.3986928104575%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAhCAYAAADZPosTAAAACXBIWXMAAAsSAAALEgHS3X78AAAGJUlEQVRIx5WW61PTZxbH83fs9PW+2u72ZWd3Z3ZnnHFmL+qoleLQIggEhIhSUCABgVAMAeR+CSEJUUjIBQgSubcWtFYhlGusoK1VFLDWSy+7XsDw2SdPEort2suLMzm5PN/fOd9zvt8nChYMBCbr2ZgwwqSBDRH4mkOvMpp/Uyicumj4XMvGbCmBiRb54UugvubfBKzYmx9Fcfqf4baSwNVsUan4wmeUYFuDH+WvBGx94eSflXFos96AB3tYv6YShxokqKxSVhoJg3y/SU0QxPcyuKJhyYoBJ7sNCdS9/zo82sHzhTheTJcIbusI+JpEBIHCNPjCoJGIgIaBFZZFG3V3W2lZd/CvshhsFW/Cd3thOQpuHRb8asBfLX7c9ENVW1vfWqHIFUNjTmxXbVTet1K7ZmNn8duYSrZxa2wfN4b38EXfO6wO57MuaAi1vIVPX/NPAcdcXXw04sY1Y6fi8WmqHprZlrGT2FNxxDcmUuTNJb54P1es2aJSCy8mmkKA4nAgHBth0OCrYtzgos/rYnTYjW2+DfP3NrQfa3mrPh7tp6WUTuk5bTzC04u14pBR7quMYHUzJpg1SbBAhMOZU05GnE56h1xcOu/CfdVK9+fNHDWmUG5JZ8aeJw6ZYb4VpsX0Z/QiymR+b6CClf5y1q+IqqdbJKhitsTO5SoHA04Hl/o6uTwiqnSeIPXYHtp0iTwYrWJxQMetQT0PPiliYyETFtWMmtIw6feTc/hvGNRv8+h8FUy1oPAX2Jk66WDM7OSCu5OFc93MXWylbb6GbF8Ju4yJ/EOoaUfRPmKK9lKUtwv1gW1YKvfzlx2v8cc3/oDmSDSDtSrZheLGezb8eQ7GKx1ctriZd3exMN7BwEQ1x2sT6W3PZtJdwHRXIaPWHAYbMzhbrqKhYB/b//0nMrOyyUndz6xNDXMWFMtKB0vpTq7nuZmt68Tv6GHKa8Ft01Cti+fpaA18Zg3x6G8N5YtnWB0sp79OxZniWGbtavm9nPJKkouVQw7upnWyeNKN/3QPi2fb8X9po8Z1nOk2jfzx+nijXJkX400ylxOet4iHWGWrm1O+E+9gOaWDr5K7WMnv5sumXu543MzcbKeyL5+PDO+BmHwQbGPLzgUmDKEHiAjI3Qzv4dIBAZjk5F5SF19nePhO5+WxrZNrQpJNH2gZqj/yE8CtixzJCeeKpYN27iYI0AQ3jzI9PCv18MTaxc3pDhzeEj6UFbZuAv6iH95R2lhO7mA12c3DjG6elfWwZurh2w87uWAp4WLLMTmMEOCvMNilJBtLCXZWlW4eZ/Sypj/Hc0MXDHq4oM/H16aW5Ad+xOGr2lcsJdoITvr+oW6+OeKF8kHu1Vm4YTzFcHE2Dz+oFLIyb5IvTWEiZAp8apTGu5UOxe3EdpYTXXyd6uE/x/pYK+1j40wn53WFaA9FMddRAMFrYcYsF5cpY9gUzDz9uFYYRYOkZBNwOc3OfbGDweqe5gyyUdUP7V7WRs4yPN5AgTOLYpMKm/04k54ingjX+Wq4AsuJWNQpu8hOeYvh+qPyIcHKFasqsTKi3QcqwV3eCE9O9XDt/Ua6c3M5XXUYqzWLsqY0VJoolEd3UiiMIC1qGwN2Jb//62vEK9M4kRUvpJcb0vLtZBc3E3pYTu3nv3nDLOvszBTWoo3ezbOx2tC9Ie3JxLpo6+aQHm9NOs7qgyRrXufve3+HLms3y/16WaXC/46La7G9LCkHuJXZw/O6c1zU6MgSlbhbMiTxwQi2I1dDeqNFaL6QS6ZsPmk9zsqAXhqtbHkx7izXD/Tjj+vlRo6HOa0FddIeTrYfRT2oobEyOQQaXg054aDUgjoWpioHFOZPDuWLxD4mo3qZElr+TNhYzPbt5BREc7IuBetdI9qhPFw1aWLCZnkosm8BuUaGzdjUsi/Gw1RSD3PH7FTFHcRbr6KnPp2aE+9SqIkmtygGe3WqdOOXtPsqpVzPOMdEphl97Ltc7RQ7d7091E6wFXEprQfv3uBF9CvAJKAroYgKZQyrQ2Vy7GtXGsOqCKshzNvGFkf5+X9fxUoB0iCnFzTPCBcv6TUCNhnOfw5QXo9yLZr+D8gPf5Qi+S+1/D+a2BEhjCAj2AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;site creature2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-fb8a0.png&quot;
+        srcset=&quot;/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-1a291.png 148w,
+/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-2bc4a.png 295w,
+/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-fb8a0.png 590w,
+/static/site-creature2-68e4cd8bc5feb1220c4a0dd63c85451e-9d65b.png 612w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2&gt;🔤 Fonts:&lt;/h2&gt;
+&lt;p&gt;Fonts are an important aspect of a site’s personality. For my fonts, I used &lt;a href=&quot;https://fonts.google.com/&quot;&gt;Google Fonts&lt;/a&gt;,
+they have a bunch of free fonts to use and you can simply link to their &lt;a href=&quot;https://en.wikipedia.org/wiki/Content_delivery_network&quot;&gt;CDN&lt;/a&gt; so that you do not have to download or install anything.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/fonts/docs/getting_started&quot;&gt;Guide to using Google Fonts&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;When choosing fonts I try to follow these guide lines:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Use serif fonts for large blocks of text.&lt;/li&gt;
+&lt;li&gt;Relate your font choices to your theme, do they feel right?&lt;/li&gt;
+&lt;li&gt;Use different fonts to signal the reader for different types of info.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The fonts I used in my app:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Font&lt;/th&gt;
+&lt;th&gt;Use&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://fonts.google.com/specimen/Nunito&quot;&gt;Nunito&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;primary body text&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://fonts.google.com/specimen/Nunito+Sans&quot;&gt;Nunito Sans&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;logo and headers&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://fonts.google.com/specimen/Rokkitt&quot;&gt;Rokkitt&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;creature descriptions&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Creature Illustration:&lt;/h2&gt;
+&lt;p&gt;The last asset I worked on is an illustration for the first “Creature”. The idea being that when a user scans a scooter it would bring up an illustration and a brief description of the corresponding Creature. My first Creature is “Zi”, an ancient, nebulous , spirit eye… thing 🤔   &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/rough-creature-a852d236cc00d3e667c2559338116007-4e82e.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 124.37810945273631%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAYAAAAxFw7TAAAACXBIWXMAAAsSAAALEgHS3X78AAADMElEQVQ4y61VW08aQRTmp/fJl6aJadqHxtSmbcRWE2utNwQFpQjCLhcFlQW53y9que6N+TozwLrgYl86ycmenXPy7Td7vnPGBoAsMramz6kPs29htonz35YBOM9m+i7LMmk2m6TRaJIh9a1yzIzNDCf73DGMrdtkCombpDkR5tyXGGIelC1JSiFJbR7ECnQGcBqQZcVI6nZ7KBZLKJbK6HS6BgDLmf8wB2Tv80euN1oolmvc1zQNtXoDpXIVKvXZqlQbqNYacyzHZmMooxHBaMJw+rGrawnDCQvveRAeb4D7qqrx2PyvYRjs+awoxlF7fUSuJIjhKFxuL7eQEEY0LuGx07M8Lj+yqurkWsqjVL1/4k6Xro9wIcQoiIh8sYJCqQpBjMAfDFM2oxmQSuMR8WQOsqKNGV6IcXz8dkT+dAf8n7Gjejyn8AeC6PX7OPWJ1AReoIugwGODwZDn9gYyPm+6cBaIzVaZghhFicTi2Pq5h82tXSy9fofzgAAxGserpWVs0D0WEyMxg+H0X3PAfr9P0ndZfthqvQkhHMOJ5wyZfBnHHh/Wvm9jbW0N6+t2fLFvwXniRa5Q4TkhMcorzlYmm+MnsMmKQlurzQFZIbK5AoIhEaHwFXYPjrH8fhWHh4dwuZx483YFO3tOCJFLXNCcTDaPTndcoFa7TZnKT0cu11qEgo8lk7jFj519bP86xOrXDTjdPpz+DuHDqp3uObBNY9HLxERGKi1o0yxsQhxuP1bsDjKQdVpdnWsqFApyFrqmIpZIIUblolGfSYfFmApYrqKN8GnDhR2Hl1ffRgOk9dBjAZOgxq4/FMPxiRtSKoNUOkt9D3yB8EwOZ6kTtO679IOjxcKu0QIl0wXk8gUcHLmx73DjLpNFOltCuVrnOdPumBE2MVruaTioqoLLRBL6RMBi5ApBIWronrUenZPPRt1M65kB2XBotR/GGhvKaLbanPFgOAZpPzyCScxy2lgBmluLdUqWaiyXy9P+7hn7LOfFeWgCfvZlNrFvbqWFA2HhxLa65ZgKpFSaUFCiafqzOJm7BRfeelMWChV7p9PhpiiK5T1ixfDFe/lfe2b7C0ABcreN5mC+AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;rough creature&quot;
+        title=&quot;&quot;
+        src=&quot;/static/rough-creature-a852d236cc00d3e667c2559338116007-fb8a0.png&quot;
+        srcset=&quot;/static/rough-creature-a852d236cc00d3e667c2559338116007-1a291.png 148w,
+/static/rough-creature-a852d236cc00d3e667c2559338116007-2bc4a.png 295w,
+/static/rough-creature-a852d236cc00d3e667c2559338116007-fb8a0.png 590w,
+/static/rough-creature-a852d236cc00d3e667c2559338116007-4e82e.png 804w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/final-creature-d577af239e27b29f3b8be01aeda38018-a0e60.jpeg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 121.25000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAYABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUCAwT/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAID/9oADAMBAAIQAxAAAAGnzk6C0iC8GjvnAb//xAAaEAEAAQUAAAAAAAAAAAAAAAAAAQIDERIT/9oACAEBAAEFApuKbrd0bRDqympl/8QAFhEBAQEAAAAAAAAAAAAAAAAAABES/9oACAEDAQE/Aa0iP//EABYRAQEBAAAAAAAAAAAAAAAAAAAREv/aAAgBAgEBPwHDCI//xAAZEAABBQAAAAAAAAAAAAAAAAAAEBEgIoH/2gAIAQEABj8CNWrx/8QAHBAAAwADAAMAAAAAAAAAAAAAAAERIUFRMXGB/9oACAEBAAE/IUorb0kSU8V/BsWHsUbFj5Ea4M//2gAMAwEAAgADAAAAEOTfwv/EABYRAQEBAAAAAAAAAAAAAAAAAAAREP/aAAgBAwEBPxDKEP/EABcRAAMBAAAAAAAAAAAAAAAAAAABERD/2gAIAQIBAT8QSzMEH//EABwQAQEAAQUBAAAAAAAAAAAAAAERACExQVFhgf/aAAgBAQABPxAsV0swEE34Bh3ZCiCt5fLh7ZoyR159nWmJU5d5rtnuIS0NwtriLvM//9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;final creature&quot;
+        title=&quot;&quot;
+        src=&quot;/static/final-creature-d577af239e27b29f3b8be01aeda38018-f8fb9.jpeg&quot;
+        srcset=&quot;/static/final-creature-d577af239e27b29f3b8be01aeda38018-e8976.jpeg 148w,
+/static/final-creature-d577af239e27b29f3b8be01aeda38018-63df2.jpeg 295w,
+/static/final-creature-d577af239e27b29f3b8be01aeda38018-f8fb9.jpeg 590w,
+/static/final-creature-d577af239e27b29f3b8be01aeda38018-a0e60.jpeg 800w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Creature description:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;One of the ancient elemental creatures, formless, mysterious, and possessing vast power. Many tales and legends surround the origin of this creature. Some worship it as a god (the cult of I) others regard it as an evil spirit or doubt its very existence. Those believed to have gazed upon the creature, are oft heard repeating the phrase: “The eye knows. The eye sees…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;With all my assets created, my next step is put them all together into a usable website. Strictly speaking this project did not progress linearly from design to development. In reality both design and development happened simultaneously. &lt;/p&gt;
+&lt;h2&gt;👩‍💻 Development&lt;/h2&gt;
+&lt;p&gt;Because people need to be outside to use one of my scooters, I can assume that my site will be visited mostly by mobile devices. That being the case, I will need to decide if I want to develop native mobile apps (andriod, IOS) or just a web app. After doing some research and looking into my project requirements, I found that I did not require any of the added features that a native mobile app provides such as bluetooth, sensor data, flashlight access, etc. By not having to develop native versions of my app, should save me a considerable amount of time and heartache.&lt;/p&gt;
+&lt;h2&gt;🛠️ Toolkits, Libraries, Frameworks&lt;/h2&gt;
+&lt;p&gt;An important decision when building a app is what tools will you use to build it. As much as possible, I try to make use of existing frameworks when building a site.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Tool&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Description / Use&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Super popular component library, makes it quick and easy to throw together a site&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://sass-lang.com/&quot;&gt;SASS&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;CSS extension, adds some nice extra features to css.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://reactjs.org/&quot;&gt;React&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;My favorite Javascript library&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://reactstrap.github.io/&quot;&gt;Reactstrap&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Ready for React Bootstrap 4 components&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://reacttraining.com/react-router/&quot;&gt;React Router&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;A router that makes adding navigation to your react app easier&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://fontawesome.com/?from=io&quot;&gt;Font Awesome&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Icon Pack - My site relies heavily on emojis, for icons however some times you need something that you cannot find an emoji for.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;http://www.heropatterns.com/&quot;&gt;Hero Patterns&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Repeatable SVG patterns to add texture to my site.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/slorenzo/react-stopwatch&quot;&gt;React Stopwatch&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;A stopwatch component built for React, I need a timer so that users can keep track of their ride time. Modifying an existing component is usually faster than starting from scratch.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/JodusNodus/react-qr-reader#readme&quot;&gt;React QR Reader&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;A QR reader component built for React. I needed a QR reader so that users can scan a QR code on the scooter.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;I chose the tools I did mostly based previous experience using them. It is always easier to go with what you know.&lt;/p&gt;
+&lt;h2&gt;Create Mock Up:&lt;/h2&gt;
+&lt;p&gt;I started by creating a simple mock up of the site using default bootstrap components.
+The mock up allowed me to focus on figuring out the logic and navigation of my app before worrying about importing any of my visual assets.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-11bd2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 91.86824498198662%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsSAAALEgHS3X78AAACMUlEQVQ4y52T224TMRCG9zm5QlzxEDwJcMcdCKgqIcR9KSRtaBq1VYGSqEk22UP2vN7z+u+MN0mTTWkQlv54bM98/r12tKIsYS68bTke5l4Ay/Hh+hG8MIYbcC/geCEs24Ht+pTrbtUVRQmtLCs1MGwXhuVgEQicn5zi1fMn+Pq9i5OzAY6+ddHp9XHc6eHouIMPHw9xqxtqQ1VnN+CCWNtAkk0Obn7d4PPrlxhcXuNscIkuwRjc61/g9Mc53rz/hP7Vbzh+uAvkI88tl+SsNaOx7oYY66bSdG5Rb2AyM0kWTDoyQzZrmMEsraprRCJBFLcUCcQiRRinCGgcKqWUmy7jVj4xmKVhT8sroGDVTbyvaVJKVFWFmuixEHRThdqJ56qqRk4353q+EsflMpfXBeW7ntfU0JhZyqFHk8PhCH9Iw9EIk8mUigukIoIxvcVcH8OcTUhj5KkAX6Rt2zBME7o+o3gB3/fvHZb0MYMgJAW0ECBOUlqSOLgo8fRthhdfSqVn73IcXtHZQQ5rqZxyLTM4Vg755+Em4QiJkQf8nCdKHLsJ5VONXEplboy19kSjmnaUygm3ukiVmkZrLdjOpcjWjmxficZ5XsCnz8HK8nx9PNZDZraeTRsoFTBHGDIweBS4drgPmKb0mKOIoJGK/xu4KmRQSEB2yP3m2j8DVwVJkihgFMUI6NibLuVfLuZRIPdZlikw/ys43lzb6/A+oYmTAohziSjjeNnnq7zdJ8PtDo9ZbX0hR4txAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;mockup&quot;
+        title=&quot;&quot;
+        src=&quot;/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-fb8a0.png&quot;
+        srcset=&quot;/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-1a291.png 148w,
+/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-2bc4a.png 295w,
+/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-fb8a0.png 590w,
+/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-526de.png 885w,
+/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-fa2eb.png 1180w,
+/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-08f6a.png 1770w,
+/static/mockup-8944ac1b1c74e0dab5ef03e36a88ff01-11bd2.png 1943w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2&gt;🗺️ Navigation flows&lt;/h2&gt;
+&lt;p&gt;The following lists map out the paths a client can take when using my app. The ride flow has more steps than I would like, maybe in the future I will look at simplifying the process.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Signup flow:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;User signs up for app by creating a new account&lt;/li&gt;
+&lt;li&gt;User confirms security code via email&lt;/li&gt;
+&lt;li&gt;User is logged in&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Ride flow:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;User signs in, if not already signed in&lt;/li&gt;
+&lt;li&gt;User navigates to Ride page&lt;/li&gt;
+&lt;li&gt;User either scans QR or manually enters code&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;App presents Creature illustration and description&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;If scooter is available, User will have the option to unlock the scooter&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;other wise they will need to try again later&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After unlock, the app routes to the stopwatch component, with start button&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;User clicks on start ride&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ride ends after time limit or user presses stop button&lt;/p&gt;
+&lt;h2&gt;Connect with AWS backend&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;At this point in the project, my back end was already setup on AWS. To help connect the API I setup on AWS with my front end I used Amazon’s &lt;a href=&quot;https://aws-amplify.github.io/&quot;&gt;Amplify Framework&lt;/a&gt;. I found Amplify’s documentation lacking in useful examples. I think the &lt;a href=&quot;https://serverless-stack.com/chapters/configure-aws-amplify.html&quot;&gt;Amplify section&lt;/a&gt; on the Serverless Stack guide provides a really good example of how to use Amplify.&lt;/p&gt;
+&lt;h2&gt;Combine mock up with visual assets&lt;/h2&gt;
+&lt;p&gt;The final step after getting both sides of my app communicating, is to take my working mock up and combine it with the visual assets I made. After a lot fiddling, testing, and breaking stuff, I slowly got every to fit together.  This part of the project was the most tedious part and probably took the longest period of time to complete.&lt;/p&gt;
+&lt;p&gt;To see the “final product”, visit:
+&lt;a href=&quot;https://creature-share.com/&quot;&gt;https://creature-share.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Configure to use Netlify&lt;/h2&gt;
+&lt;p&gt;One last step for my site is to set it up for hosting on &lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify&lt;/a&gt; I could have used AWS for hosting, which seems like a natural fit because my back end is already on AWS, however I found Netlify better for these reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automated deployments - I only need to push to a git repo to deploy a new version of my site. &lt;/li&gt;
+&lt;li&gt;Automatic SSL is a lot easier than manually creating one with &lt;a href=&quot;https://aws.amazon.com/certificate-manager/&quot;&gt;AWS Certificate Manager&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Builtin CDN, &lt;a href=&quot;https://aws.amazon.com/certificate-manager/&quot;&gt;AWS cloud front&lt;/a&gt; can be a pain in the ass to setup, with Netlify you don’t have to do anything to setup your site on a CDN.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;🏁 Conclusion / Final steps&lt;/h2&gt;
+&lt;p&gt;At this point, I have a working proof of concept site. The next step for this project is to figure out the scooter hardware and get it communicating with my app. My site is by no means a production ready app. I purposelessly left out necessary features like payment, because I do not currently intend to try to make my app into a working business. For me, the purpose of making Creatures was to learn and have fun. However, if I was going to try to make a production ready site, here are some things I would try to implement:&lt;/p&gt;
+&lt;h2&gt;😐 Current Issues / Improvements:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Provide users the ability to delete their account.&lt;/li&gt;
+&lt;li&gt;Allow users to see ride statistics, ride history, creatures ridden&lt;/li&gt;
+&lt;li&gt;Allow users to locate Creatures via a map interface&lt;/li&gt;
+&lt;li&gt;Add Payment / Charity option&lt;/li&gt;
+&lt;li&gt;Provide a more granular time keeping / billing logic&lt;/li&gt;
+&lt;li&gt;Allow users to see the battery level of scooter&lt;/li&gt;
+&lt;li&gt;Provide users the ability to have the Creature make a chirp sound to aid in locating it. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are interested in starting your own scooter share, I put together a repo with a &lt;a href=&quot;https://github.com/jooshkins/scooter-frontend&quot;&gt;generic version of the front end&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[🖥️ Back End]]></title><description><![CDATA[This post covers the process of designing the Back End (server side code) for my scooter share app, Creatures. My back end will manage a…]]></description><link>https://github.com/jooshkins/creatures/backend/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/backend/</guid><pubDate>Sun, 28 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This post covers the process of designing the Back End (server side code) for my scooter share app, Creatures. My back end will manage a database, authorize users, execute application logic, and communicate with our hardware (scooters).  I started developing the back end first because it is the core of my application and the other parts, (front end, hardware, etc) all rely on the back end.&lt;/p&gt;
+&lt;p&gt;This post is not meant to explain in exhaustive detail the problems involved and how to resolve them.  For a guide that does cover setting up a serverless application in exhaustive detail I recommend the &lt;a href=&quot;https://serverless-stack.com&quot;&gt;Severless Stack Guide&lt;/a&gt;, it’s great. &lt;/p&gt;
+&lt;p&gt;I chose to structure my back end as a serverless application, which means I will not need to provision and maintain any servers. To build my serverless app, I will use &lt;a href=&quot;https://aws.amazon.com/&quot;&gt;Amazon Web Services (AWS)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Specifically I will be using these AWS services:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/cognito/&quot;&gt;Cognito&lt;/a&gt; - authorization / authentication&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/lambda/&quot;&gt;Lamda&lt;/a&gt; - application logic&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/dynamodb/&quot;&gt;DynamoDB&lt;/a&gt; - simple database for keeping track of scooters&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/api-gateway/&quot;&gt;API Gateway&lt;/a&gt; - API to receive communication from clients and scooters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Additionally my back end will communicate with a Cloud IoT service, &lt;a href=&quot;https://www.particle.io/&quot;&gt;Particle&lt;/a&gt;. My scooters will use Particle hardware. I cover Particle in greater depth in the &lt;a href=&quot;/hardware&quot;&gt;🔧 Hardware Guide&lt;/a&gt;. &lt;/p&gt;
+&lt;h1&gt;😡 Challenges&lt;/h1&gt;
+&lt;p&gt;When designing the back end for my scooter share, it was helpful for me to start by writing out the features I wanted to provide for my users. Writing out a features list, should help concentrate my development efforts. The feature list I came up with was focused on &lt;strong&gt;must-have&lt;/strong&gt; features. Since I considered this project a proof of concept I wanted to focus my efforts on creating a minimum viable product.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Here is the list of must-have features&lt;/strong&gt; &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scooter needs to be GPS tracked both from scooter side and client side for redundancy&lt;/li&gt;
+&lt;li&gt;User needs to be able to create an account and log into it and out of it&lt;/li&gt;
+&lt;li&gt;User needs to be able check out and check in scooters&lt;/li&gt;
+&lt;li&gt;Rides are based on a set time limit e.g. 20 minutes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Here is a list of secondary features that I would like to have some day:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;User can find scooter on map&lt;/li&gt;
+&lt;li&gt;Native apps (IOS, Android)&lt;/li&gt;
+&lt;li&gt;User can see battery status of scooter&lt;/li&gt;
+&lt;li&gt;User can track ride history&lt;/li&gt;
+&lt;li&gt;User can edit account settings after creating an account: name, email, etc.&lt;/li&gt;
+&lt;li&gt;User can have the scooter sound a chime to help find it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;🤔 Solutions&lt;/h1&gt;
+&lt;h2&gt;🔑 Authentication and Authorization&lt;/h2&gt;
+&lt;p&gt;For Authorization, I used Amazon Cognito. The nice part about Cognito is that handles all the password requirement logic, and verification steps.
+There are two parts to using Cognito:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;User Pools - used for authentication&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;provides signup and login functionality for my app&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Identity Pools - used for authorization&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;provides access to other AWS services that I designate, in my case that will mean authorizing access to my API Gateway resources.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;💽 Database&lt;/h2&gt;
+&lt;p&gt;I will use &lt;a href=&quot;https://aws.amazon.com/dynamodb/&quot;&gt;DynamoDB&lt;/a&gt; as my database solution.
+For simplicity’s sake, ****I will use a single table and each scooter will have a single entry that gets updated when a user checks in or checks out a scooter. The database will be managed by Lamda functions I setup. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Each entry into the table is structured as follows: (one object per scooter)&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;checkInTime&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Number - UTC time for when the scooter was last checked in&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;checkOutTime&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Number -UTC time for when the scooter was last checked out&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;gps&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;List - containing multiple Map objects with GPS coordinates&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;gpsArchive&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;List - prior list containing multiple Map objects with GPS coordinates&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;requestID&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;String - UID tied to last check out request&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;scooterId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;String - code tied to particular scooter&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;userId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;String - provided by cognito identifying particular user&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;📜 Logic&lt;/h2&gt;
+&lt;p&gt;For my application’s logic, I will be using Lamda functions. Lamda is the service that makes my application a serverless application. Essentially every time my application needs to run some code, Lamda spins up a &lt;a href=&quot;https://www.docker.com/resources/what-container&quot;&gt;container&lt;/a&gt;, runs the code, and shuts down the container after the code completes. The beauty of using Lamda, is that I can focus on the code for my app without worrying about the infrastructure; no, setting up servers, containers, or installing applications, just code. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The following table lists all of my Lamda functions. — All functions are written in JavaScript.&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Function Name&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Function’s… function&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;archiveGPS&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Moves GPS coordinates from the current log into archive, gets called every 5 mins during a ride.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;logGPS&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Logs a set of GPS coordinates into current log gets called every minute during a ride.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;checkIn&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Calls Particle function to lock scooter then updates checkInTime for scooter&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;checkOut&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Calls Particle function to unlock scooter then updates database with current rider’s info&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;checkStatus&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Checks to see if the scooter is available for check out&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code class=&quot;language-text&quot;&gt;scooterCheckSelf&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Checks to see if the scooter is currently checked out.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Outside of my Lamda functions, there are several functions that reside on the scooter’s IoT hardware, a &lt;a href=&quot;https://www.particle.io/cellular/&quot;&gt;Particle Electron&lt;/a&gt;. Particle’s cloud service provides access to functions stored on the device via a simple API.&lt;/p&gt;
+&lt;h2&gt;💬 API&lt;/h2&gt;
+&lt;p&gt;I setup API endpoints for each of the functions listed above using API Gateway. Authenticated users will have access to all endpoints except for the scooterCheckSelf, that endpoint only the scooters will have access to. In order to provision access to the scooterCheckSelf API, I setup up an API Key that the scooter will use to authenticate.&lt;/p&gt;
+&lt;h1&gt;🙂 Implementation&lt;/h1&gt;
+&lt;p&gt;To help manage and setup my back end resources, I used the &lt;a href=&quot;https://serverless.com/&quot;&gt;Serverless framework&lt;/a&gt; as my &lt;a href=&quot;https://en.wikipedia.org/wiki/Infrastructure_as_code&quot;&gt;IaC&lt;/a&gt; solution. Using an infrastructure as code framework, allows me to rebuild my back end easily, in case I screw anything up. &lt;/p&gt;
+&lt;p&gt;For code and build instructions see:
+&lt;a href=&quot;https://github.com/jooshkins/scooter-backend&quot;&gt;https://github.com/jooshkins/scooter-backend&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Idea / Project Goals]]></title><description><![CDATA[Bird, Limes, bah! How hard can it be to create a scooter share? 😁 Walking to work I see plenty of electric scooters on the side walk, and I…]]></description><link>https://github.com/jooshkins/creatures/project-goals/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/project-goals/</guid><pubDate>Tue, 11 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Bird, Limes, bah! How hard can it be to create a scooter share? 😁&lt;/h2&gt;
 &lt;p&gt;Walking to work I see plenty of electric scooters on the side walk, and I figure I could make something like that.
 So here it goes, let’s see what it takes to replicate a service similar to what existing scooter shares offer.
 Now obviously, being just one person I cannot actually compete with a startup like, Bird nor do I intend to make a product that has the same level of polish and features as theirs. I am shooting for a service that is a rough approximation at a way smaller scale.&lt;/p&gt;
@@ -14,6 +837,7 @@ document the process, and open source as much as possible; in effect create a bu
 &lt;li&gt;AWS - Amazon Web Services&lt;/li&gt;
 &lt;li&gt;IOT - Internet of Things&lt;/li&gt;
 &lt;li&gt;Serverless&lt;/li&gt;
+&lt;li&gt;Netlify&lt;/li&gt;
 &lt;li&gt;Gatsby&lt;/li&gt;
 &lt;li&gt;Supporting Charity&lt;/li&gt;
 &lt;/ul&gt;
@@ -39,7 +863,51 @@ document the process, and open source as much as possible; in effect create a bu
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Easy peasy…&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[Rolling Project Log]]></title><description><![CDATA[A sequential log of project steps I will update this as the project progresses Write down ideas for app Start researching creating an…]]></description><link>https://github.com/jooshkins/creatures/log/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/log/</guid><pubDate>Mon, 10 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;A sequential log of project steps&lt;/h3&gt;
+&lt;h3&gt;Easy peasy…&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[Project Costs / Parts List]]></title><description><![CDATA[Costs so far I will update this as the project progresses Part Price Kick Scooter $76 Plastic Project Box $11 2 x one inch pipe holders $…]]></description><link>https://github.com/jooshkins/creatures/project-costs/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/project-costs/</guid><pubDate>Mon, 10 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Costs so far&lt;/h3&gt;
+&lt;p&gt;I will update this as the project progresses&lt;/p&gt;
+&lt;hr&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Part&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Price&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.amazon.com/gp/product/B075RTGYP2/ref=oh_aui_detailpage_o00_s00?ie=UTF8&amp;#x26;psc=1&quot;&gt;Kick Scooter&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;$76&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://www.amazon.com/Pinfox-Waterproof-Electronic-Junction-Enclosure/dp/B06XSMK61Q/ref=sr_1_52?s=lamps-light&amp;#x26;ie=UTF8&amp;#x26;qid=1538679539&amp;#x26;sr=1-52&amp;#x26;keywords=project+box&quot;&gt;Plastic Project Box&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;$11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2 x one inch pipe holders&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;$1.69&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Washers&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;$0.50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bolts&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;$0.50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Domain Name&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;$12*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LLC filling&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;$100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;$201.69&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Rolling Project Log]]></title><description><![CDATA[A sequential log of project steps I will update this as the project progresses Write down ideas for app Start researching creating an…]]></description><link>https://github.com/jooshkins/creatures/log/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/log/</guid><pubDate>Mon, 10 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;A sequential log of project steps&lt;/h3&gt;
 &lt;p&gt;I will update this as the project progresses&lt;/p&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -82,46 +950,19 @@ document the process, and open source as much as possible; in effect create a bu
 &lt;li&gt;Attached Project Box to scooter&lt;/li&gt;
 &lt;li&gt;Designed Logo&lt;/li&gt;
 &lt;li&gt;Added Handle bar Bracket &lt;/li&gt;
-&lt;li&gt;Designed First Creature - Zi&lt;/li&gt;
+&lt;li&gt;Designed First Creature - zI&lt;/li&gt;
 &lt;li&gt;Finished Splash Screen Illustration&lt;/li&gt;
 &lt;li&gt;Finished creature sketches&lt;/li&gt;
 &lt;li&gt;Finished draft of frontend&lt;/li&gt;
 &lt;li&gt;Research starting a LLC&lt;/li&gt;
 &lt;li&gt;Start Gatsby Project Blog — &lt;a href=&quot;https://github.com/gatsbyjs/gatsby-starter-blog&quot;&gt;using starter blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Project Costs / Parts List]]></title><description><![CDATA[Costs so far I will update this as the project progresses Part Price Kick Scooter $76 Plastic Project Box $11 2 x one inch pipe holders $…]]></description><link>https://github.com/jooshkins/creatures/project-costs/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/project-costs/</guid><pubDate>Mon, 10 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Costs so far&lt;/h3&gt;
-&lt;p&gt;I will update this as the project progresses&lt;/p&gt;
-&lt;hr&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Part&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;Price&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&quot;https://www.amazon.com/gp/product/B075RTGYP2/ref=oh_aui_detailpage_o00_s00?ie=UTF8&amp;#x26;psc=1&quot;&gt;Kick Scooter&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;$76&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&quot;https://www.amazon.com/Pinfox-Waterproof-Electronic-Junction-Enclosure/dp/B06XSMK61Q/ref=sr_1_52?s=lamps-light&amp;#x26;ie=UTF8&amp;#x26;qid=1538679539&amp;#x26;sr=1-52&amp;#x26;keywords=project+box&quot;&gt;Plastic Project Box&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;$11&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2 x one inch pipe holders&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;$1.69&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Washers&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;$0.50&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Bolts&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;$0.50&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;strong&gt;$89.69&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</content:encoded></item></channel></rss>
+&lt;li&gt;Host Blog on GitHub Pages&lt;/li&gt;
+&lt;li&gt;Registered Domain Name - creature-share.com&lt;/li&gt;
+&lt;li&gt;File LLC&lt;/li&gt;
+&lt;li&gt;Fix FrontEnd bugs and make site more mobile focused.&lt;/li&gt;
+&lt;li&gt;Attempt to crack BLE communication on electric scooter&lt;/li&gt;
+&lt;li&gt;Add GPS Tracking to Site&lt;/li&gt;
+&lt;li&gt;Recieved LLC Papers&lt;/li&gt;
+&lt;li&gt;Got Particle Electron&lt;/li&gt;
+&lt;li&gt;Got other electronics parts, accelerometer, gps, protoboard, optoilolator&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item></channel></rss>
