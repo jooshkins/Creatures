@@ -1,4 +1,747 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Creatures 👹🛴]]></title><description><![CDATA[A blog about the open source business project - Creatures]]></description><link>https://github.com/jooshkins/creatures</link><generator>RSS for Node</generator><lastBuildDate>Mon, 29 Apr 2019 14:58:40 GMT</lastBuildDate><item><title><![CDATA[🖼️ Front End]]></title><description><![CDATA[This post roughly covers the process of creating the graphic style and developing the logic for the interface of my application…]]></description><link>https://github.com/jooshkins/creatures/frontend/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/frontend/</guid><pubDate>Mon, 29 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This post roughly covers the process of creating the graphic style and developing the logic for the interface of my application.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Creatures 👹🛴]]></title><description><![CDATA[A blog about the open source business project - Creatures]]></description><link>https://github.com/jooshkins/creatures</link><generator>RSS for Node</generator><lastBuildDate>Sat, 04 May 2019 17:52:37 GMT</lastBuildDate><item><title><![CDATA[🛠️ Hardware]]></title><description><![CDATA[ In this post I will cover the history of developing the hardware solution for my scooter share app. 
+  Hardware repo containing all files…]]></description><link>https://github.com/jooshkins/creatures/hardware/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/hardware/</guid><pubDate>Sat, 04 May 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt; In this post I will cover the history of developing the hardware solution for my scooter share app.
+&lt;a href=&quot;https://github.com/jooshkins/scooter-hardware&quot;&gt;Hardware repo containing all files used in this post.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; Link to video guide for embedded solution coming soon…&lt;/p&gt;
+&lt;h1&gt;😡 Challenges&lt;/h1&gt;
+&lt;p&gt;There are two main challenges that I faced in developing my dock-less scooter hardware, tracking and security. Depending on how completely you want to solve these challenges, will determine the approach you take towards implementing a solution.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tracking:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Know where the scooter is at all times, as best I can.&lt;/li&gt;
+&lt;li&gt;Tracking is needed, because scooters will need to be picked up for charging, and repairs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Security:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To prevent unauthorized access to the scooter.&lt;/li&gt;
+&lt;li&gt;Security is needed to deter thieves and general meanies from harming our beloved scooters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;🤔 Solutions&lt;/h1&gt;
+&lt;h2&gt;🗺️ Tracking:&lt;/h2&gt;
+&lt;p&gt;I can solve the challenge of tracking though the use of a combination of GPS and a cellular data connection. Below is three methods for tracking, in practice I will be using a combination of two or more of these methods.&lt;/p&gt;
+&lt;h3&gt;📻 Embedded GPS on the scooter&lt;/h3&gt;
+&lt;p&gt;This method uses a device embedded onto the scooter. The device requires at least a GPS module, GPS antenna, and a cellular data connection to upload the scooter’s coordinates to our server.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pros:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tracking is physically bound to the scooter.&lt;/li&gt;
+&lt;li&gt;Can track even if the scooter is moved when locked.&lt;/li&gt;
+&lt;li&gt;Most accurate form of tracking.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Most expensive.&lt;/li&gt;
+&lt;li&gt;Largest hardware requirement.&lt;/li&gt;
+&lt;li&gt;Requires GPS signal to work.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;📱 User’s phone GPS&lt;/h3&gt;
+&lt;p&gt;Via the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API&quot;&gt;HTML Geolocation API&lt;/a&gt; I can request the location of our users. The idea is that I would start tracking once a scooter is checked out and stop once the ride ends. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pros:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Free.&lt;/li&gt;
+&lt;li&gt;No requirements for additional scooter hardware.&lt;/li&gt;
+&lt;li&gt;The Geolocation API also uses WiFi and IP based locating if GPS signal is not available.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Relies on user’s cellular connection, which may be unreliable.&lt;/li&gt;
+&lt;li&gt;Use of a VPN may prevent accurate tracking.&lt;/li&gt;
+&lt;li&gt;Assumes that the phone which unlocked the scooter is within close proximity to the scooter during the entire ride… which is not necessarily true.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;📶 Triangulation of Cell Towers:&lt;/h3&gt;
+&lt;p&gt;A device which has a cellular connection can preform a rudimentary form of &lt;a href=&quot;https://docs.particle.io/tutorials/integrations/google-maps/&quot;&gt;tracking by triangulating it’s location in relation to nearby cell towers&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pros:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mild hardware requirements.&lt;/li&gt;
+&lt;li&gt;Works in areas that do not have a GPS signal e.g. indoors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tracking is not very accurate.&lt;/li&gt;
+&lt;li&gt;Still requires a device with a cellular connection.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;👮‍♀️ Security:&lt;/h2&gt;
+&lt;p&gt;There are two methods for hopefully keeping the scooters a bit safer.&lt;/p&gt;
+&lt;h3&gt;🚨 Alarm&lt;/h3&gt;
+&lt;p&gt;I want my device to be able to ask and answer this question, &lt;em&gt;Is someone riding me or moving me without permission?&lt;/em&gt;  The first requirement to answering this question is that my scooter needs to be able to detect motion.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Some methods to detect motion:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Embedded accelerometer - detect acceleration.&lt;/li&gt;
+&lt;li&gt;Changes in location via GPS.&lt;/li&gt;
+&lt;li&gt;Magnetometer - digital compass, detecting changes in direction.&lt;/li&gt;
+&lt;li&gt;Use a simple shake switch to detect vibrations.&lt;/li&gt;
+&lt;li&gt;Detect if our scooter’s wheels are moving.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once the device has detected motion, it will check its lock status, if unlocked do nothing, otherwise sound an alarm.&lt;/p&gt;
+&lt;h3&gt;🔒 Locking&lt;/h3&gt;
+&lt;p&gt;I will lock my scooter by disabling the throttle, in affect acting as a remote kill switch.
+For this to work, my scooter will have an embedded micro controller which will connect to the throttle of the scooter, and control access to it. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;There are several methods that I can provide for a user to unlock the scooter:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Unlock via web app&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Easiest for a user to use.&lt;/li&gt;
+&lt;li&gt;Requires active cell connection for our scooter’s hardware.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Keypad Unlocking&lt;/strong&gt; - Turning throttle on or off via keypad on scooter, user would have to enter an unlock code generated by our web app.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Does not require Cell Connection on scooter.&lt;/li&gt;
+&lt;li&gt;Would require code to keep security keys in sync on the server and scooter hardware.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Bluetooth_Low_Energy&quot;&gt;BLE&lt;/a&gt; Unlocking&lt;/strong&gt; - Turning throttle on or off via bluetooth, in effect I would use the user’s bluetooth connection on their phone to control the throttle on the scooter.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Requires a scooter with a cracked BLE protocol.&lt;/li&gt;
+&lt;li&gt;In order to use a customer’s Bluetooth connection, I would need to develop native apps, IOS or Andriod. There is a &lt;a href=&quot;https://developer.mozilla.corg/en-US/docs/Web/API/Web_Bluetooth_API&quot;&gt;web bluetooth api&lt;/a&gt;, however it is not fully supported yet.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;🙂 Implementation&lt;/h1&gt;
+&lt;p&gt;Now that I have my solutions researched, how can I implement the solutions in practice?
+In the end I came up with two separate hardware solutions,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A quick and dirty option, that utilizes a cell phone, and minimal effort.&lt;/li&gt;
+&lt;li&gt;And a more robust option in which I put together a custom embedded device.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;The minimal effort option.&lt;/h2&gt;
+&lt;p&gt;The beauty of this option is that you probably already own all the required hardware to test it out. All you will need is a cell phone, preferably one you would not mind losing. Modern cell phones are incredible devices, and they contain a multitude of sensors and processing capacity. Specifically phones provide a lot of the hardware capabilities that I am interested in for my scooter.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Phone Hardware&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Specific Requirement&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Project Feature&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;GPS radio&lt;/td&gt;
+&lt;td&gt;Location tracking&lt;/td&gt;
+&lt;td&gt;Tracking - Embedded&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cellular connection&lt;/td&gt;
+&lt;td&gt;Data Transfer&lt;/td&gt;
+&lt;td&gt;Tracking &amp;#x26; Security&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Battery&lt;/td&gt;
+&lt;td&gt;Remote Operation&lt;/td&gt;
+&lt;td&gt;Tracking &amp;#x26; Security&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Processor&lt;/td&gt;
+&lt;td&gt;Handling App Logic&lt;/td&gt;
+&lt;td&gt;Tracking &amp;#x26; Security&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Speakers&lt;/td&gt;
+&lt;td&gt;Alarm&lt;/td&gt;
+&lt;td&gt;Security - Alarm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Accelerometers&lt;/td&gt;
+&lt;td&gt;Detecting motion&lt;/td&gt;
+&lt;td&gt;Security - Alarm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;One requirement you will not see in the table above is locking.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I can approach the locking issue in one of several ways:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leave it out, who cares, the scooter will still have the alarm go off if someone does not unlock it.&lt;/li&gt;
+&lt;li&gt;Add another device controlled by the phone (Arudino, raspberry pi, etc)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Bluetooth_Low_Energy&quot;&gt;BLE&lt;/a&gt; locking, with a lot of the electric scooters on the market you can connect to them via bluetooth and control the throttle via an app.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After some research, I ultimately chose that I wanted to go down the route of adding another device in addition to the cell phone.  figure out the locking capability. I will be using the ever popular &lt;a href=&quot;https://en.wikipedia.org/wiki/ESP8266&quot;&gt;ESP8266&lt;/a&gt;. I chose the ESP8266 because it is, cheap, popular, and includes WiFi connectivity.&lt;/p&gt;
+&lt;h3&gt;⚙️ Hardware Requirements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Old, used Android phone, or cheap new one.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For me, I am using an old busted moto x pure, the screen mostly works, and the battery life is crap, but it is good enough for testing.
+
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/cellphone-47545d77a9d50c2509c5ce3cd3c3b5de-b2ab1.jpeg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 133.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAwAEAv/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAFUx9tLBE5S4JdsMH//xAAaEAADAQEBAQAAAAAAAAAAAAAAAQIREhAh/9oACAEBAAEFAprG7k0n63hprzs6HdSum/P/xAAWEQEBAQAAAAAAAAAAAAAAAAABEBH/2gAIAQMBAT8BCbP/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPwEp/8QAGhAAAQUBAAAAAAAAAAAAAAAAAQAQESExIP/aAAgBAQAGPwK1nJMrS0A0Vrf/xAAbEAEAAgMBAQAAAAAAAAAAAAABABEQITFRkf/aAAgBAQABPyEx6JT0vuDsvyVGARaHHU17sPJtLADoRQKmE//aAAwDAQACAAMAAAAQZMEw/8QAFhEBAQEAAAAAAAAAAAAAAAAAAREQ/9oACAEDAQE/EKlwQS5//8QAFhEBAQEAAAAAAAAAAAAAAAAAARAR/9oACAECAQE/EAgwyf/EABwQAQADAQADAQAAAAAAAAAAAAEAESExYXGhwf/aAAgBAQABPxBKDrYNPiMReeLzHcK2w/UsKS47iyu5rJ8mJL++pbUWbx7DXI1Iu7Ymus//2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;cellphone&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/cellphone-47545d77a9d50c2509c5ce3cd3c3b5de-f8fb9.jpeg&quot;
+        srcset=&quot;/creatures/static/cellphone-47545d77a9d50c2509c5ce3cd3c3b5de-e8976.jpeg 148w,
+/creatures/static/cellphone-47545d77a9d50c2509c5ce3cd3c3b5de-63df2.jpeg 295w,
+/creatures/static/cellphone-47545d77a9d50c2509c5ce3cd3c3b5de-f8fb9.jpeg 590w,
+/creatures/static/cellphone-47545d77a9d50c2509c5ce3cd3c3b5de-85e3d.jpeg 885w,
+/creatures/static/cellphone-47545d77a9d50c2509c5ce3cd3c3b5de-d1924.jpeg 1180w,
+/creatures/static/cellphone-47545d77a9d50c2509c5ce3cd3c3b5de-b2ab1.jpeg 1620w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/Pinfox-Waterproof-Electronic-Junction-Enclosure/dp/B06XSMK61Q/ref=sr_1_52?s=lamps-light&amp;#x26;ie=UTF8&amp;#x26;qid=1538679539&amp;#x26;sr=1-52&amp;#x26;keywords=project+box&quot;&gt;A water proof plastic project box&lt;/a&gt; and mounting hardware.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mounting hardware: nuts, bolts, washers, and pipe straps. I needed to drill several holes to mount the pipe straps to the project box’s cover.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/box1-20f4b5d6964b05cbc932f03d2828d0a7-f5a3e.jpeg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDAf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAGqLiUJB//EABkQAAMBAQEAAAAAAAAAAAAAAAECAwARMf/aAAgBAQABBQKM1KeHRvNUJ6d//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGRAAAgMBAAAAAAAAAAAAAAAAAAECEBEh/9oACAEBAAY/AkzKim+m1//EABsQAQACAgMAAAAAAAAAAAAAAAEAERAhMUFR/9oACAEBAAE/IU8Np7HhYoLg3qCo7lz/2gAMAwEAAgADAAAAEEQ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQIBAT8QJ//EABoQAQEBAQEBAQAAAAAAAAAAAAERACExQXH/2gAIAQEAAT8QX6qWjEZDi++zWrEZzK0hC37qMxU/M9vd/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;box1&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/box1-20f4b5d6964b05cbc932f03d2828d0a7-f8fb9.jpeg&quot;
+        srcset=&quot;/creatures/static/box1-20f4b5d6964b05cbc932f03d2828d0a7-e8976.jpeg 148w,
+/creatures/static/box1-20f4b5d6964b05cbc932f03d2828d0a7-63df2.jpeg 295w,
+/creatures/static/box1-20f4b5d6964b05cbc932f03d2828d0a7-f8fb9.jpeg 590w,
+/creatures/static/box1-20f4b5d6964b05cbc932f03d2828d0a7-85e3d.jpeg 885w,
+/creatures/static/box1-20f4b5d6964b05cbc932f03d2828d0a7-d1924.jpeg 1180w,
+/creatures/static/box1-20f4b5d6964b05cbc932f03d2828d0a7-9452e.jpeg 1770w,
+/creatures/static/box1-20f4b5d6964b05cbc932f03d2828d0a7-f5a3e.jpeg 3840w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/box2-bdddfc16239cd4fe1f55c851a5ece61f-05d88.jpeg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 118.94273127753303%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAYABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUEAf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHlCdUMDpMlMXIE/8QAHRAAAgIBBQAAAAAAAAAAAAAAAAIBBDEDEhMiMv/aAAgBAQABBQKvESbVJzUyN6rMqnLpjT2//8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAGxAAAgIDAQAAAAAAAAAAAAAAAAECERASMTL/2gAIAQEABj8CdqzgyeGS2dHtDP/EAB0QAAMAAQUBAAAAAAAAAAAAAAABETEhUWGRodH/2gAIAQEAAT8h0CRBbXoWK5H8BHsHktTLEz6iGxYp/9oADAMBAAIAAwAAABDQOAP/xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/EB//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/EB//xAAdEAEAAwACAwEAAAAAAAAAAAABABEhMUEQkbHw/9oACAEBAAE/EN8GAl8wCd+ZBmcCqWfr34L3vsLuDMLq4yAreVO6CSM//9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;box2&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/box2-bdddfc16239cd4fe1f55c851a5ece61f-f8fb9.jpeg&quot;
+        srcset=&quot;/creatures/static/box2-bdddfc16239cd4fe1f55c851a5ece61f-e8976.jpeg 148w,
+/creatures/static/box2-bdddfc16239cd4fe1f55c851a5ece61f-63df2.jpeg 295w,
+/creatures/static/box2-bdddfc16239cd4fe1f55c851a5ece61f-f8fb9.jpeg 590w,
+/creatures/static/box2-bdddfc16239cd4fe1f55c851a5ece61f-85e3d.jpeg 885w,
+/creatures/static/box2-bdddfc16239cd4fe1f55c851a5ece61f-d1924.jpeg 1180w,
+/creatures/static/box2-bdddfc16239cd4fe1f55c851a5ece61f-9452e.jpeg 1770w,
+/creatures/static/box2-bdddfc16239cd4fe1f55c851a5ece61f-05d88.jpeg 1816w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/box3-40c8dda19c4debbef1b8a8ed55ac5ba5-f5a3e.jpeg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABzZM9OIND/8QAFxABAQEBAAAAAAAAAAAAAAAAAhAAAf/aAAgBAQABBQLIXrM//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGhAAAQUBAAAAAAAAAAAAAAAAEAABAjEykf/aAAgBAQAGPwJVHh04/8QAGhABAAMAAwAAAAAAAAAAAAAAAQARIRAxYf/aAAgBAQABPyEILThB1xmaPKjQz//aAAwDAQACAAMAAAAQDx//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAVEQEBAAAAAAAAAAAAAAAAAAABEP/aAAgBAgEBPxBn/8QAGhABAAMBAQEAAAAAAAAAAAAAAQARIVFhgf/aAAgBAQABPxA8yLAeLG6ld7DxADfI5qBS6/CFAGT/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;box3&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/box3-40c8dda19c4debbef1b8a8ed55ac5ba5-f8fb9.jpeg&quot;
+        srcset=&quot;/creatures/static/box3-40c8dda19c4debbef1b8a8ed55ac5ba5-e8976.jpeg 148w,
+/creatures/static/box3-40c8dda19c4debbef1b8a8ed55ac5ba5-63df2.jpeg 295w,
+/creatures/static/box3-40c8dda19c4debbef1b8a8ed55ac5ba5-f8fb9.jpeg 590w,
+/creatures/static/box3-40c8dda19c4debbef1b8a8ed55ac5ba5-85e3d.jpeg 885w,
+/creatures/static/box3-40c8dda19c4debbef1b8a8ed55ac5ba5-d1924.jpeg 1180w,
+/creatures/static/box3-40c8dda19c4debbef1b8a8ed55ac5ba5-9452e.jpeg 1770w,
+/creatures/static/box3-40c8dda19c4debbef1b8a8ed55ac5ba5-f5a3e.jpeg 3840w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cheap SIM card, &lt;a href=&quot;https://www.freedompop.com/&quot;&gt;FreedomPop&lt;/a&gt;, &lt;a href=&quot;https://ting.com&quot;&gt;Ting&lt;/a&gt;, &lt;a href=&quot;https://hologram.io/&quot;&gt;Hologram&lt;/a&gt; are good options.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.com/s?k=esp8266&amp;#x26;ref=nb_sb_noss_1&quot;&gt;esp8266&lt;/a&gt; micro controller - Optional, needed for locking capability.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.sparkfun.com/products/15105&quot;&gt;Optoisolator&lt;/a&gt; - to isolate the scooter which runs on 5v from the the esp8266 which runs on 3.3v.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;💾 Software Requirements:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://llamalab.com/automate/&quot;&gt;Automate app&lt;/a&gt; - for running a simple “app” on our phone.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.arduino.cc/en/main/software&quot;&gt;Arduino IDE&lt;/a&gt;- for programming our esp8266.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;📱 Setup Cell Phone:&lt;/h3&gt;
+&lt;p&gt;For my SIM card, I am using a spare &lt;a href=&quot;https://www.freedompop.com/&quot;&gt;Freedom Pop&lt;/a&gt; SIM.  Freedom pop offers limited data plans, some which are free if you do not go over your data cap. Since my scooter’s cell phone will use very little data, I shouldn’t have a problem staying within FreedomPop’s free tier.&lt;/p&gt;
+&lt;p&gt;The first step I took was to reset the phone, so that it does not contain any personal data. I also created a throwaway email account for my scooter, because I needed an email address to be able to download apps from the play store. For tracking, I used google’s built in find my phone feature.&lt;/p&gt;
+&lt;p&gt;The next step is to install the &lt;a href=&quot;https://llamalab.com/automate/&quot;&gt;Automate app&lt;/a&gt;, this app allows to you to create “programs” (they are called flows in the app) to automate different features of your phone. Using Automate’s visual flowchart interface, I made a simple flow that will handle the logic for my scooter, you can find a copy of the flow &lt;a href=&quot;https://github.com/jooshkins/scooter-hardware/blob/master/cellPhoneAutomate/ScooterContollerEsp8266.flo&quot;&gt;here&lt;/a&gt; &lt;/p&gt;
+&lt;h3&gt;The flow’s logic works as such:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;When it detects movement via the phone’s accelerometer:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The phone sends a http request to my scooterCheckSelf endpoint, to check to see if the scooter has been checked out.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;My endpoint responds with true or false, letting our phone know if the scooter has been checked out.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If the scooter has not been checked out,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Turn on alarm and send http request to esp8266 to lock the throttle.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the scooter is checked out, &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Send http request to esp8266 to unlock the throttle.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Program esp8266&lt;/h3&gt;
+&lt;p&gt;The phone and esp8266 will communicate via an Ad-hoc WiFi network. The esp8266 will act as an access point which the phone will connect to. Also the esp8266 will serve up a simple web server with which the phone will be able to send requests to.&lt;/p&gt;
+&lt;h3&gt;To setup the esp8266:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Download and install &lt;a href=&quot;https://www.arduino.cc/en/Main/Software&quot;&gt;Arduino IDE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Flash &lt;a href=&quot;https://github.com/jooshkins/scooter-hardware/blob/master/esp8266/esp8266-ThrottleController.ino&quot;&gt;custom scooter controller firmware&lt;/a&gt; onto esp8266&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;The scooter controller firmware’s logic works as such:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Creates an ad-hoc wifi network, that the cell phone will connect to.&lt;/li&gt;
+&lt;li&gt;Prints it’s ip address to it’s serial port. &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Creates a simple web server with two endpoints.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;http://{esp8266’s IP address}/on&lt;/code&gt;&lt;/strong&gt;  — send high power to pin SD3 (known as pin 10 in code)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;http://{esp8266’s IP address}/off&lt;/code&gt;&lt;/strong&gt;  — send low power to pin SD3&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;🔌 Wiring Diagram&lt;/h3&gt;
+&lt;p&gt;The actual model of esp8266 I used differs from the one in the diagram, so pin layout may vary.
+The 4n35 optoisolator needs a 470 Ohm resistor connected pin 1, the other side of the optoisolator interrupts the positive wire from the scooter’s head unit to the scooter’s throttle. &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/wiring-simple-e1284afd2a176d40110d29c81798f07d-a65ab.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 49.75845410628019%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABxElEQVQoz4WR224SURSGeQ7fwAfwWXwjTeNtjTfGixYvGi88pWILNiDHYQTK2RrmgArDoczAzMAU6uZzgz0Qm5Q/+bPXTvb+1r/2DnlaFPssAv0MtWKK3d0XPN15QkfXqCtZfhQLGI0Gutyv3G61MHUDu9vA/fUN73eB5dQSSC2XSyskLsaszMJl6rv0BwN0rYXf7xN4HvPZFLfbwTYNRhI4aZtMLIvA1rk8r7E4r0pg7xbIlZbclT8NGA5tHNenW23QrTSwbZfRaMx8IW7uSf8DCmGFJHVFXuG5roX4sz6saxq5dBo1r5I/iZL9coRSyJPNZ7DHzmZvcbXeJrxJet1AyjAMFEWhfFrm3ae3vDl8j2kNiKUymGctdOWQ77GXVA6eCXVvh59KcgtQ11FyOUrFEh+PPvD6IExdM/iciNMyOsT2H3P8/AEnrx6KZPgRRnMb0GyjqCrFUkmOqvI1fky+pBLPJnEmE5rNmmymkIhHhdZqyqcS9wMvZjPc8RjfdfEkwPf8de06Yy4XC07LFRKJJHt7YVGt1gmC4C5wE7xNqkyfTqeIRCKiVqsxn8/vT7jc+Pn/vVKv11t7OBwKaRzHsf4CbOrlsxeTDOMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;wiring simple&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/wiring-simple-e1284afd2a176d40110d29c81798f07d-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/wiring-simple-e1284afd2a176d40110d29c81798f07d-1a291.png 148w,
+/creatures/static/wiring-simple-e1284afd2a176d40110d29c81798f07d-2bc4a.png 295w,
+/creatures/static/wiring-simple-e1284afd2a176d40110d29c81798f07d-fb8a0.png 590w,
+/creatures/static/wiring-simple-e1284afd2a176d40110d29c81798f07d-526de.png 885w,
+/creatures/static/wiring-simple-e1284afd2a176d40110d29c81798f07d-fa2eb.png 1180w,
+/creatures/static/wiring-simple-e1284afd2a176d40110d29c81798f07d-08f6a.png 1770w,
+/creatures/static/wiring-simple-e1284afd2a176d40110d29c81798f07d-a65ab.png 2484w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jooshkins/scooter-hardware/blob/master/esp8266/esp8266-wiring.fzz&quot;&gt;Fritzing Wiring Diagram File&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;🍞 Bread Board Test&lt;/h3&gt;
+&lt;p&gt;You can consider the LED as a stand in for the throttle in this setup. Since the LED is on, the scooter would be unlocked.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/breadboard-7689f706f96405046d644f4b1d7aad12-f5a3e.jpeg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 54.37499999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMC/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAdw3aLg//8QAGxABAAICAwAAAAAAAAAAAAAAAQACAwQSEyH/2gAIAQEAAQUC7Eldp5VyqFSVPZ//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAaEAACAgMAAAAAAAAAAAAAAAAAAQIREDKB/9oACAEBAAY/AjUupLgs/wD/xAAaEAEBAQEAAwAAAAAAAAAAAAABEQAhYZGh/9oACAEBAAE/IVwBbpF4+72pNgXa+cBRq7//2gAMAwEAAgADAAAAEDgv/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHRABAAICAgMAAAAAAAAAAAAAAQARITFBYVFxsf/aAAgBAQABPxAtGQutdzYBNLwIDAHRk+zHFjLbx7h8GztYVbn/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;breadboard&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/breadboard-7689f706f96405046d644f4b1d7aad12-f8fb9.jpeg&quot;
+        srcset=&quot;/creatures/static/breadboard-7689f706f96405046d644f4b1d7aad12-e8976.jpeg 148w,
+/creatures/static/breadboard-7689f706f96405046d644f4b1d7aad12-63df2.jpeg 295w,
+/creatures/static/breadboard-7689f706f96405046d644f4b1d7aad12-f8fb9.jpeg 590w,
+/creatures/static/breadboard-7689f706f96405046d644f4b1d7aad12-85e3d.jpeg 885w,
+/creatures/static/breadboard-7689f706f96405046d644f4b1d7aad12-d1924.jpeg 1180w,
+/creatures/static/breadboard-7689f706f96405046d644f4b1d7aad12-9452e.jpeg 1770w,
+/creatures/static/breadboard-7689f706f96405046d644f4b1d7aad12-f5a3e.jpeg 3840w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h3&gt;Mount Box to Scooter&lt;/h3&gt;
+&lt;p&gt;The scooter in the photos is a cheap kick scooter for testing purposes. To test the throttle locking function I would need use an electric scooter, and I would need to route wires from the scooter’s head unit and throttle. Both the phone and esp8266 test rig are inside of the box.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/kickscooter-43be571740e9178aa57798c682557472-f5a3e.jpeg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIEA//EABQBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAW0gcayIH//EABoQAAICAwAAAAAAAAAAAAAAAAABAhMRITH/2gAIAQEAAQUCXEtFuCyQ2z//xAAXEQEAAwAAAAAAAAAAAAAAAAAAARES/9oACAEDAQE/Aall/8QAFhEBAQEAAAAAAAAAAAAAAAAAABES/9oACAECAQE/Aa0//8QAGRAAAgMBAAAAAAAAAAAAAAAAAAEQETFR/9oACAEBAAY/AppI4af/xAAZEAEBAQEBAQAAAAAAAAAAAAABABExcYH/2gAIAQEAAT8hrIC7KbdEMo+uSHd/L//aAAwDAQACAAMAAAAQY8//xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8Qlmn/xAAXEQADAQAAAAAAAAAAAAAAAAAAAREx/9oACAECAQE/EIWkH//EABoQAQEBAQEBAQAAAAAAAAAAAAERACExcVH/2gAIAQEAAT8Qhp+c1MEHVa4nowQGeDZhyIOo7T8dXKPwb//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;kickscooter&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/kickscooter-43be571740e9178aa57798c682557472-f8fb9.jpeg&quot;
+        srcset=&quot;/creatures/static/kickscooter-43be571740e9178aa57798c682557472-e8976.jpeg 148w,
+/creatures/static/kickscooter-43be571740e9178aa57798c682557472-63df2.jpeg 295w,
+/creatures/static/kickscooter-43be571740e9178aa57798c682557472-f8fb9.jpeg 590w,
+/creatures/static/kickscooter-43be571740e9178aa57798c682557472-85e3d.jpeg 885w,
+/creatures/static/kickscooter-43be571740e9178aa57798c682557472-d1924.jpeg 1180w,
+/creatures/static/kickscooter-43be571740e9178aa57798c682557472-9452e.jpeg 1770w,
+/creatures/static/kickscooter-43be571740e9178aa57798c682557472-f5a3e.jpeg 3840w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;The project box is comically large because it is needed to hold my large phone. A smaller phone would be a better choice.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/kickscooter2-132fcda854f70b4755c7d1579f317360-b2ab1.jpeg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 133.33333333333331%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDBAH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAG2W0TWAQ7RCggf/8QAHRAAAQMFAQAAAAAAAAAAAAAAAAECAwQREiEyIv/aAAgBAQABBQIbucfzTJ5FvjDqMQZwf//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8BH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EABoQAAICAwAAAAAAAAAAAAAAAAEQABECcYH/2gAIAQEABj8CmsXddYYX/8QAHRABAAICAgMAAAAAAAAAAAAAAQARECExUWGBof/aAAgBAQABPyEJu+ElRcjpgjrtfbAWpbLiSpeHxxn/2gAMAwEAAgADAAAAELDLPP/EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAEDAQE/ECH/xAAVEQEBAAAAAAAAAAAAAAAAAAAQAf/aAAgBAgEBPxAh/8QAHRAAAwACAwEBAAAAAAAAAAAAAAERIUExUWGR8P/aAAgBAQABPxDFBa+fs0Y3S0UczBpUPLLPgYuqSnF3UJzSPfo8jQb8O2M6f//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;kickscooter2&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/kickscooter2-132fcda854f70b4755c7d1579f317360-f8fb9.jpeg&quot;
+        srcset=&quot;/creatures/static/kickscooter2-132fcda854f70b4755c7d1579f317360-e8976.jpeg 148w,
+/creatures/static/kickscooter2-132fcda854f70b4755c7d1579f317360-63df2.jpeg 295w,
+/creatures/static/kickscooter2-132fcda854f70b4755c7d1579f317360-f8fb9.jpeg 590w,
+/creatures/static/kickscooter2-132fcda854f70b4755c7d1579f317360-85e3d.jpeg 885w,
+/creatures/static/kickscooter2-132fcda854f70b4755c7d1579f317360-d1924.jpeg 1180w,
+/creatures/static/kickscooter2-132fcda854f70b4755c7d1579f317360-b2ab1.jpeg 1620w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;The minimal effort option does work, I was able to get it to detect motion, control the alarm, lock status, and communicate with my API. Not a bad result for a mostly broken phone and a $5 micro controller. However I didn’t bother thoroughly testing this solution. I assume that I would have issues with battery life, managing sleep states and software stability. This option was a fun experiment in seeing how far I could go, without out putting much effort into the setup&lt;/p&gt;
+&lt;h2&gt;The Embedded Option&lt;/h2&gt;
+&lt;p&gt;For the embedded option, I made a video (coming soon) explaining how I put it together. The material below is written as supplementary material for the video, rather than an overview.&lt;/p&gt;
+&lt;p&gt;Using off the shelf components, I will be putting together a custom device purpose built to work with my application. The embedded option is attempt to create a solution that would be somewhat plausible to deploy to actual customers. However there are certainly a lot of improvements that could be made. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pros:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Over the air updates - via Particle cloud service.&lt;/li&gt;
+&lt;li&gt;More predictable results,  no unnecessary software running on our device. &lt;/li&gt;
+&lt;li&gt;More customizable actions.&lt;/li&gt;
+&lt;li&gt;Battery should last a lot longer.&lt;/li&gt;
+&lt;li&gt;Better Tracking&lt;/li&gt;
+&lt;li&gt;More compact than minimal option.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;More complicated assembly.&lt;/li&gt;
+&lt;li&gt;Particle has a monthly cost.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Parts List:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.sparkfun.com/products/13740&quot;&gt;GPS Receiver - GP-20U7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.adafruit.com/product/1536&quot;&gt;Buzzer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://store.particle.io/collections/cellular&quot;&gt;Particle Electron&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.com/ALITOVE-Female-Connector-WS2812B-SK6812-RGBW/dp/B071H5XCN5/ref=sr_1_39?crid=3FVLXSARLY7VV&amp;#x26;keywords=jst+connector&amp;#x26;qid=1548081502&amp;#x26;sprefix=jst+co%2Caps%2C178&amp;#x26;sr=8-39&quot;&gt;JST-SM Connectors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.com/BTF-LIGHTING-Plastics-waterproof-connctor-Applicable/dp/B01LCV8DXQ/ref=sr_1_1_sspa?crid=3TH5WYJUXO3UW&amp;#x26;keywords=btf%2Blighting%2Bwaterproof&amp;#x26;qid=1556991150&amp;#x26;s=gateway&amp;#x26;sprefix=btf%2Blighting%2Bwat%2Caps%2C143&amp;#x26;sr=8-1-spons&amp;#x26;th=1&quot;&gt;Waterproof Connectors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.adafruit.com/product/3931&quot;&gt;Waterproof Enclosure&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.sparkfun.com/products/15105&quot;&gt;Optoisolator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.adafruit.com/product/2809&quot;&gt;LIS3DH Triple-Axis Accelerometer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.adafruit.com/product/1609&quot;&gt;Perma-Proto Half-sized Breadboard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.adafruit.com/product/598&quot;&gt;Female Pin Headers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Typical electronics supplies: resistors, wire, solder, connectors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;💿 Software List&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jooshkins/scooter-hardware/blob/master/electron/firmware.bin&quot;&gt;Custom Particle Firmware&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Particle Firmware Flow&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Main Loop:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Check if battery status is below 10%, if so perma-lock scooter &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check if scooter has been has been unlocked longer than the ride time limit.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If so, lock scooter.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Gather GPS data&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check for movement, &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If movement occurred, and scooter is locked, sound alarm.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Run google locator function, cell and wifi tracking.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;🔌 Wiring Diagram&lt;/h3&gt;
+&lt;p&gt;The particle electron is hidden to show the wiring.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/wiring-complex-95b0394b063b2e6881624e3ecb13421b-56152.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 62.96296296296296%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAACZElEQVQ4y32Ta0/TYBTH+TS+870fwE/jFyC+0Rg1KrwhQaMRQoigaFyEhCGDwKx0LXRCB4xdWNlQ1stKmay7du16/j7tDIEwOMnJ05ye55f/uTxDrtuF7/fQ63lwnC6q1Sp8AITrFsQqZRXHShrt3+uoH0bhlpYJ3b/9dCJl6DwfBQwO+d0EJian8PTZExT3U8hJEjLSJkqyjEI6jdLRETKCAC2bRadRZwLasM5VnNZUcr0u9XkMCN9B4B5T2m53YFmncFpNkNOB33XQPLNwpiioFovo2PaF2pXUGia+jmH82yh9T62EwJ7fU4bohvIajoea48Or2WgydeS6+H8JNd3ExPQIttMb4LYWKcJH+sCex4BEgdZAbt/ZhcCGxz7h/oNHyEZX4drnYcxjfd5L8Dg9VFA2/0DIcODTcSpXtRDok89Kvtz0EO6HQ5n8HMXDly9wsrpxMZF2x8GhlBw0q34P/UFA9q/rAantdfzanUU+voCCKuNIl1HUdrArLrE8/yrQvejaIGAgnVA0khCld4jFRtk5hc3ke+yfLCK5OQOzUEAlt4ccN4NC9C2JU49JnnuDipIfDHTYhJ+/GoEoLGP2yziyqoSDsoidEg8xMQfTsJBPxbD0+g4SH+/Rzw936eDHMOoNZzAwWJ/IwjTkwhKEdAQH+hqOrQ3kTtawl4mFOcEDkOUdiKJAQoIni63XjSWTT2wF6rAbGmq2hkbdQJN5w9bZdyXMMYwKtrYkzM8vUOC6blwHXoEOWs5Lpus6EjwPjuMoHl8nTdNuUXh5L695f8KtVguqqrKXZZFpmsTOIKb8A9u2wAAWGIR/AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;wiring complex&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/wiring-complex-95b0394b063b2e6881624e3ecb13421b-fb8a0.png&quot;
+        srcset=&quot;/creatures/static/wiring-complex-95b0394b063b2e6881624e3ecb13421b-1a291.png 148w,
+/creatures/static/wiring-complex-95b0394b063b2e6881624e3ecb13421b-2bc4a.png 295w,
+/creatures/static/wiring-complex-95b0394b063b2e6881624e3ecb13421b-fb8a0.png 590w,
+/creatures/static/wiring-complex-95b0394b063b2e6881624e3ecb13421b-526de.png 885w,
+/creatures/static/wiring-complex-95b0394b063b2e6881624e3ecb13421b-fa2eb.png 1180w,
+/creatures/static/wiring-complex-95b0394b063b2e6881624e3ecb13421b-08f6a.png 1770w,
+/creatures/static/wiring-complex-95b0394b063b2e6881624e3ecb13421b-56152.png 2511w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jooshkins/scooter-hardware/blob/master/electron/electron-wiring.fzz&quot;&gt;Fritzing Wiring Diagram File&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;✔️ Photos of completed device:&lt;/h3&gt;
+&lt;p&gt;I cut the traces on the bottom of the board for: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Row 2 Column C &lt;/li&gt;
+&lt;li&gt;Row 3, Column C&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/protoboard1-479aeebf1d04c9ce0c06f90783756cb0-c1266.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 72.75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAECAwT/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABg86hFZX/xAAaEAABBQEAAAAAAAAAAAAAAAASAAECAxET/9oACAEBAAEFAtgyKlWCRR3opPr/AP/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EAB8QAAEBCQEAAAAAAAAAAAAAAAABAgMRISIxMlGRcf/aAAgBAQAGPwKp2sNmK8KbC3mZtcN+n//EABwQAQACAQUAAAAAAAAAAAAAAAEAEUEhMWHw8f/aAAgBAQABPyGqV+WeqiyRGYuy1wqdAi3W6N4//9oADAMBAAIAAwAAABAfH//EABYRAAMAAAAAAAAAAAAAAAAAAAEQEf/aAAgBAwEBPxAxf//EABURAQEAAAAAAAAAAAAAAAAAABAh/9oACAECAQE/EKf/xAAcEAEAAgMBAQEAAAAAAAAAAAABABEhMUFRkfD/2gAIAQEAAT8Qsmi7Bedlz7xFYhEAme7iyYFsIJ5mKvFf77CWGpQC/J//2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;protoboard1&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/protoboard1-479aeebf1d04c9ce0c06f90783756cb0-f8fb9.jpg&quot;
+        srcset=&quot;/creatures/static/protoboard1-479aeebf1d04c9ce0c06f90783756cb0-e8976.jpg 148w,
+/creatures/static/protoboard1-479aeebf1d04c9ce0c06f90783756cb0-63df2.jpg 295w,
+/creatures/static/protoboard1-479aeebf1d04c9ce0c06f90783756cb0-f8fb9.jpg 590w,
+/creatures/static/protoboard1-479aeebf1d04c9ce0c06f90783756cb0-85e3d.jpg 885w,
+/creatures/static/protoboard1-479aeebf1d04c9ce0c06f90783756cb0-d1924.jpg 1180w,
+/creatures/static/protoboard1-479aeebf1d04c9ce0c06f90783756cb0-c1266.jpg 1200w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/protoboard2-3b6dd9c6b3c559ed3c3ce402aaff7420-c1266.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 70.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAOABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAEDBP/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEAMQAAABm8SAJGr/xAAbEAACAwADAAAAAAAAAAAAAAAAAQISExEiMv/aAAgBAQABBQKKVepP1rwbIbsf/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGRAAAwADAAAAAAAAAAAAAAAAAAEyEBEi/9oACAEBAAY/AlySsSSbP//EABoQAAMBAQEBAAAAAAAAAAAAAAABESFhMfD/2gAIAQEAAT8hpIeejQnSxnCUSdTp9WXYnD//2gAMAwEAAgADAAAAEMf/AP/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPxC6j//EAB0QAQEBAAEFAQAAAAAAAAAAAAERAEEhMVFxofD/2gAIAQEAAT8QuFAaed54+wyMIUGOxi3gBeWep+fmCKaAVZv/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;protoboard2&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/protoboard2-3b6dd9c6b3c559ed3c3ce402aaff7420-f8fb9.jpg&quot;
+        srcset=&quot;/creatures/static/protoboard2-3b6dd9c6b3c559ed3c3ce402aaff7420-e8976.jpg 148w,
+/creatures/static/protoboard2-3b6dd9c6b3c559ed3c3ce402aaff7420-63df2.jpg 295w,
+/creatures/static/protoboard2-3b6dd9c6b3c559ed3c3ce402aaff7420-f8fb9.jpg 590w,
+/creatures/static/protoboard2-3b6dd9c6b3c559ed3c3ce402aaff7420-85e3d.jpg 885w,
+/creatures/static/protoboard2-3b6dd9c6b3c559ed3c3ce402aaff7420-d1924.jpg 1180w,
+/creatures/static/protoboard2-3b6dd9c6b3c559ed3c3ce402aaff7420-c1266.jpg 1200w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/creatures/static/protoboard3-2dce725c029c6878b2e3af2b4469a685-c1266.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 65.83333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMEBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAVVZaSgmD//EABoQAAICAwAAAAAAAAAAAAAAAAISABEBECH/2gAIAQEAAQUCdYaCB1eTnNf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAdEAABBAIDAAAAAAAAAAAAAAABAAIRIRJhEDEy/9oACAEBAAY/Ara2NrLFp0pHRQoUvI4//8QAGxAAAgIDAQAAAAAAAAAAAAAAAAERITFRYaH/2gAIAQEAAT8hSwmeg10tHYzYtkaG0k6JZsMn/9oADAMBAAIAAwAAABAgD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/EGf/xAAdEAEBAAICAwEAAAAAAAAAAAABEQAhMUFxscHR/9oACAEBAAE/ENxp2G+CZwSghauQKAj0YGsrTX7iwj3qn3IJeL0Z/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;protoboard3&quot;
+        title=&quot;&quot;
+        src=&quot;/creatures/static/protoboard3-2dce725c029c6878b2e3af2b4469a685-f8fb9.jpg&quot;
+        srcset=&quot;/creatures/static/protoboard3-2dce725c029c6878b2e3af2b4469a685-e8976.jpg 148w,
+/creatures/static/protoboard3-2dce725c029c6878b2e3af2b4469a685-63df2.jpg 295w,
+/creatures/static/protoboard3-2dce725c029c6878b2e3af2b4469a685-f8fb9.jpg 590w,
+/creatures/static/protoboard3-2dce725c029c6878b2e3af2b4469a685-85e3d.jpg 885w,
+/creatures/static/protoboard3-2dce725c029c6878b2e3af2b4469a685-d1924.jpg 1180w,
+/creatures/static/protoboard3-2dce725c029c6878b2e3af2b4469a685-c1266.jpg 1200w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2&gt;🏁 Done!&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[🖼️ Front End]]></title><description><![CDATA[This post roughly covers the process of creating the graphic style and developing the logic for the interface of my application…]]></description><link>https://github.com/jooshkins/creatures/frontend/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/frontend/</guid><pubDate>Mon, 29 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This post roughly covers the process of creating the graphic style and developing the logic for the interface of my application.&lt;/p&gt;
 &lt;h1&gt;😡 Challenges&lt;/h1&gt;
 &lt;p&gt;Tackling the design and logic for my front end is essentially a process of trying to figure out what is the personalty of my app and how will users interact with it. In general, the project followed a path from design to development to testing.&lt;/p&gt;
 &lt;h2&gt;🎨 Design&lt;/h2&gt;
@@ -821,7 +1564,7 @@ For simplicity’s sake, ****I will use a single table and each scooter will hav
 &lt;h1&gt;🙂 Implementation&lt;/h1&gt;
 &lt;p&gt;To help manage and setup my back end resources, I used the &lt;a href=&quot;https://serverless.com/&quot;&gt;Serverless framework&lt;/a&gt; as my &lt;a href=&quot;https://en.wikipedia.org/wiki/Infrastructure_as_code&quot;&gt;IaC&lt;/a&gt; solution. Using an infrastructure as code framework, allows me to rebuild my back end easily, in case I screw anything up. &lt;/p&gt;
 &lt;p&gt;For code and build instructions see:
-&lt;a href=&quot;https://github.com/jooshkins/scooter-backend&quot;&gt;https://github.com/jooshkins/scooter-backend&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Idea / Project Goals]]></title><description><![CDATA[Bird, Limes, bah! How hard can it be to create a scooter share? 😁 Walking to work I see plenty of electric scooters on the side walk, and I…]]></description><link>https://github.com/jooshkins/creatures/project-goals/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/project-goals/</guid><pubDate>Tue, 11 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Bird, Limes, bah! How hard can it be to create a scooter share? 😁&lt;/h2&gt;
+&lt;a href=&quot;https://github.com/jooshkins/scooter-backend&quot;&gt;https://github.com/jooshkins/scooter-backend&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[💡 Idea / Project Goals]]></title><description><![CDATA[Bird, Limes, bah! How hard can it be to create a scooter share? 😁 Walking to work I see plenty of electric scooters on the side walk, and I…]]></description><link>https://github.com/jooshkins/creatures/project-goals/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/project-goals/</guid><pubDate>Tue, 11 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Bird, Limes, bah! How hard can it be to create a scooter share? 😁&lt;/h2&gt;
 &lt;p&gt;Walking to work I see plenty of electric scooters on the side walk, and I figure I could make something like that.
 So here it goes, let’s see what it takes to replicate a service similar to what existing scooter shares offer.
 Now obviously, being just one person I cannot actually compete with a startup like, Bird nor do I intend to make a product that has the same level of polish and features as theirs. I am shooting for a service that is a rough approximation at a way smaller scale.&lt;/p&gt;
@@ -863,7 +1606,7 @@ document the process, and open source as much as possible; in effect create a bu
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Easy peasy…&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[Project Costs / Parts List]]></title><description><![CDATA[Costs so far I will update this as the project progresses Part Price Kick Scooter $76 Plastic Project Box $11 2 x one inch pipe holders $…]]></description><link>https://github.com/jooshkins/creatures/project-costs/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/project-costs/</guid><pubDate>Mon, 10 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Costs so far&lt;/h3&gt;
+&lt;h3&gt;Easy peasy…&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[💸 Project Costs / Parts List]]></title><description><![CDATA[Costs so far I will update this as the project progresses Part Price Kick Scooter $76 Plastic Project Box $11 2 x one inch pipe holders $…]]></description><link>https://github.com/jooshkins/creatures/project-costs/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/project-costs/</guid><pubDate>Mon, 10 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Costs so far&lt;/h3&gt;
 &lt;p&gt;I will update this as the project progresses&lt;/p&gt;
 &lt;hr&gt;
 &lt;table&gt;
@@ -907,7 +1650,7 @@ document the process, and open source as much as possible; in effect create a bu
 &lt;td align=&quot;center&quot;&gt;&lt;strong&gt;$201.69&lt;/strong&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Rolling Project Log]]></title><description><![CDATA[A sequential log of project steps I will update this as the project progresses Write down ideas for app Start researching creating an…]]></description><link>https://github.com/jooshkins/creatures/log/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/log/</guid><pubDate>Mon, 10 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;A sequential log of project steps&lt;/h3&gt;
+&lt;/table&gt;</content:encoded></item><item><title><![CDATA[📝 Rolling Project Log]]></title><description><![CDATA[A sequential log of project steps I will update this as the project progresses Write down ideas for app Start researching creating an…]]></description><link>https://github.com/jooshkins/creatures/log/</link><guid isPermaLink="false">https://github.com/jooshkins/creatures/log/</guid><pubDate>Mon, 10 Dec 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;A sequential log of project steps&lt;/h3&gt;
 &lt;p&gt;I will update this as the project progresses&lt;/p&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -965,4 +1708,10 @@ document the process, and open source as much as possible; in effect create a bu
 &lt;li&gt;Recieved LLC Papers&lt;/li&gt;
 &lt;li&gt;Got Particle Electron&lt;/li&gt;
 &lt;li&gt;Got other electronics parts, accelerometer, gps, protoboard, optoilolator&lt;/li&gt;
+&lt;li&gt;Ordered esp8266&lt;/li&gt;
+&lt;li&gt;Put together minimal effort option, created wiring diagram, automate flow&lt;/li&gt;
+&lt;li&gt;Tested minimal effort option with bread board setup.&lt;/li&gt;
+&lt;li&gt;Created wiring diagram for embedded option.&lt;/li&gt;
+&lt;li&gt;Assembled embedded option.&lt;/li&gt;
+&lt;li&gt;Created hardware repo.&lt;/li&gt;
 &lt;/ol&gt;</content:encoded></item></channel></rss>
